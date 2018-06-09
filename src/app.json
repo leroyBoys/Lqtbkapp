@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/index",
+    "pages/home/index"
+  ],
+  
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "心心惠",
+    "navigationBarBackgroundColor": "#339933",
+    "backgroundColor": "#b2b2b2",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+     "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "common/images/tabBar/tab_home_normal.png",
+        "selectedIconPath": "common/images/tabBar/tab_home_selected.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "common/images/tabBar/tab_category_normal.png",
+        "selectedIconPath": "common/images/tabBar/tab_category_selected.png",
+        "pagePath": "pages/search/index",
+        "text": "搜索"
+      },
+      {
+        "iconPath": "common/images/tabBar/tab_my_normal.png",
+        "selectedIconPath": "common/images/tabBar/tab_my_selected.png",
+        "pagePath": "pages/home/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
