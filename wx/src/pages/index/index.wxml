@@ -1,7 +1,29 @@
+<include src="../../common/templates/templates.wxml"/>
+
 <view class="container">
-  <text class="title">{{ title }}</text>
-  <view class="info">
-    <image src="{{userInfo.avatarUrl}}"/>
-    <text>{{ userInfo.nickName }}</text>
-  </view>
+
+ <!-- 轮播图 start -->
+    <template is="tk_ad_swiper" data="{{datas:ads}}"></template>
+
+  <!-- 轮播图 end -->
+
+<!--推荐分类列表-->
+    <view class="cates">
+      <block wx:key="this*" wx:for="{{cates}}" wx:for-index="index" wx:for-item="cate">
+        <view data-index="{{index}}" class="cate">
+          <image src="{{cate.src}}" class="img" bindtap='clickLink' data-url='{{cate.url}}' mode="aspectFit" />
+          <text class="name">{{cate.name}}</text>
+        </view>
+      </block>
+    </view>
+<!--推荐分类列表
+-->
+
+<block wx:key="this*" wx:for="{{showDatas}}">
+    <template is="{{item.tempId}}" data="{{...item}}"></template>
+</block>
+
+
+
+  
 </view>

@@ -85,6 +85,9 @@ function showToast(title, type = "error") {
 
 
 function getCurPage() {
+  if (wx.curPage){
+    return wx.curPage;
+  }
   let pages = getCurrentPages();
   return pages[pages.length - 1];
 }
@@ -146,6 +149,59 @@ function bindSaoMa(page) {
     })
   }
 }
+function clickRedirectTo(e){
+  let url = e.target.dataset ? e.target.dataset.url : null;
+  if (!url) {
+    console.error("未设置 data-url");
+    return
+  }
+  _clickRedirectTo(url);
+}
+
+/** 不保留当前页面 */
+function _clickRedirectTo(url) {
+  wx.redirectTo({
+    url: url,
+    fail: function () {
+      wx.switchTab({
+        url: url,
+        fail: function () {
+          console.error(url + " is fail in");
+        }
+      })
+    }
+  })
+}
+
+/** 保留当前页面 */
+function _clickNavigateTo(url) {
+  wx.navigateTo({
+    url: url,
+    fail: function () {
+      wx.switchTab({
+        url: url,
+        fail: function () {
+          console.error(url + " is fail in");
+        }
+      })
+    }
+  })
+}
+
+/** 根据当前页面设置是否保留跳转 */
+function clickLink(e){
+  let url = e.target.dataset ?e.target.dataset.url:null;
+  if (!url){
+    console.warn("未设置 data-url");
+    return
+  }
+  let systeConfig = wx.curPage.systemConfig;
+  if (!systeConfig || !systeConfig.isSave){
+    _clickRedirectTo(url);
+    return
+  }
+  _clickNavigateTo(url);
+}
 
 function downFile(url,obj,callback){
   wx.downloadFile({
@@ -172,10 +228,30 @@ function uploadLog(msg){
 }
 
 /**初始化绑定wx事件 */
-function initFunctionWx(app) {
+function initFunctionBind(app) {
   //绑定alert
-  wx.alert = alert;
-  wx.uploadLog = uploadLog;
+  wx.tk_alert = alert;
+  wx.tk_uploadLog = uploadLog;
+  wx.tk_initFunctionPage = initFunctionPage;
+  wx.tk_util = utilData;
+  wx.tk_config = config;
+}
+
+function initFunctionPage(page){
+  console.log(page.route+":初始化 initFunctionPage page.initFunctionPage:" + page.initFunctionPage + " ");
+  if (page.initFunctionPage){
+    return;
+  }
+  let onshow = page.onShow;//绑定自定义onshow（含原先的onshow）方法
+  page.onShow = function(res){
+    wx.curPage = page;
+    onshow();
+  }
+
+  //绑定统一的clickLink标签方式
+  page.clickLink = clickLink;
+  page.clickRedirectTo = clickRedirectTo;
+
 }
 
 /**正式测试环境切换路由 */
@@ -188,13 +264,14 @@ try{
 }catch(e){
 }
 
-module.exports = {
+let utilData = {
   formatTime: formatTime,
   request: realRequest,
   realRequest: request,
   showToast: showToast,
   bindSaoMa: bindSaoMa,
-  initFunctionWx: initFunctionWx,
+  initFunctionBind: initFunctionBind,
   newThread: newThread,
   downFile: downFile
 }
+module.exports = utilData

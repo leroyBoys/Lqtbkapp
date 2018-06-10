@@ -1,0 +1,82 @@
+  <!-- 循环广告 -->
+  <template name="tk_ad_swiper">
+    <swiper autoplay="true"  indicator-dots="true" wx:if="{{datas && datas.length>0}}" >
+          <block wx:for="{{datas}}" wx:key="this*">
+            <swiper-item >
+              <image src="{{item.src}}" class="ad-swiper" bindtap='clickLink' data-url='{{item.url}}'/>
+            </swiper-item>
+        </block>
+    </swiper>
+  </template>
+
+<!-- 不循环的或者单张海报的广告 -->
+<template name="tk_ad">
+  <block wx:if="{{image}}">
+        <image  src="{{image.src}}" bindtap='clickLink' data-url="{{image.url}}" class="ad" />
+    </block>
+    <block wx:else="{{datas && datas.length>0}}" >
+      <image wx:for="{{datas}}" wx:key="this*" wx:for-item="image"  src="{{image.src}}" bindtap='clickLink' data-url="{{image.url}}" class="ad" />
+    </block>
+</template>
+
+<!-- 广播 -->
+<template name="tk_channel">
+    <block wx:if="{{datas && datas.length > 0}}">
+              
+      <view class="notice">
+      <view class='lightbox'></view>
+  
+            <icon class="iconfont icon-laba" style='color:red;font-size:20px' ></icon>
+            <!-- <view class="notice-list">{{notices[0].title}}</view> -->
+            <view class="notice-list">
+                <swiper  vertical="true" autoplay="true" circular="true" interval="2000">
+                  <block wx:for="{{datas}}" wx:key="{{item}}">
+                    <navigator url="" open-type="navigate">
+                      <swiper-item>
+                        <view class="swiper_item">
+                          <text>{{item.title}}</text>
+                        </view>
+                      </swiper-item>
+                    </navigator>
+                  </block>
+                </swiper>
+            </view>
+
+        </view> 
+     
+    </block>
+</template>
+
+
+<template name="tk_main_1_circle">
+
+  <view class="template">
+        <view class="title_center">
+            <image wx:if="{{icon_first}}" class="icon" src="{{icon_first}}"/>
+            <text>{{title}}</text>
+            <image wx:if="{{icon_second}}" class="icon" src="{{icon_second}}"/>
+        </view>
+        <view wx:if="{{head}}" class="head">
+          <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
+        </view>
+
+       <scroll-view  scroll-x="true" class="recommend_scroll_x_box">
+          <block  wx:for="{{items}}" wx:key="this*">
+          
+           <view class="recommend_hot_box recommend_hot_box_color">
+            <image src="{{item.src}}" bindtap='clickLink' data-url="{{item.url}}" class="recommend_hot_image"></image>
+          </view>
+
+          </block>
+            <view class="recommend_hot_box">
+              <view class="recommend_hot_button">
+               <view bindtap='clickLink' class="recommend_hot_more" data-url='{{mainurl}}'>查看更多</view>
+              </view>
+          </view>
+        </scroll-view>
+  </view>
+
+
+
+</template>
+  

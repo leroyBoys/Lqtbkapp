@@ -1,1 +1,19 @@
 @import "common/plugins/weui.wxss";
+@import "common/plugins/font.wxss";
+@import "common/templates/tip/tip.wxss";
+page{
+  background: #f4f4f4;
+  color: #333;
+  font-size: 14px;
+  min-height: 100%;
+  font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+}
+
+.container {
+  min-height: 100%;
+  width:100%;
+}
+
+.template{
+  width: 100%;
+}

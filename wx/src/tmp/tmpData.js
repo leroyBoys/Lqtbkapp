@@ -1,30 +1,67 @@
 var config = require("../utils/config.js");
 
 var data = [];
-data[key("0")] = [
+
+let cates = [
   {
-    url: "http://www.lsh123.com/img/bb/9c9e97710b2db4b7efb027",
-    name: "饮料/水"
+    src: "http://www.lsh123.com/img/bb/9c9e97710b2db4b7efb027",
+    name: "饮料/水",
+    url:"/pages/shopList/shopList"
   }, {
-    url: "http://www.lsh123.com/img/bb/fde2310b09de5d51af71d5",
-    name: "方便速食"
+    src: "http://www.lsh123.com/img/bb/fde2310b09de5d51af71d5",
+    name: "方便速食",
+    url: "/pages/shopList/shopList"
   }, {
-    url: "http://www.lsh123.com/img/bb/dfa0850f4150501ba1b658",
-    name: "饼干糕点"
+    src: "http://www.lsh123.com/img/bb/dfa0850f4150501ba1b658",
+    name: "饼干糕点",
+    url: "/pages/shopList/shopList"
   }, {
-    url: "http://www.lsh123.com/img/bb/57b9c81b6dadb0c451adf2",
-    name: "酒类"
+    src: "http://www.lsh123.com/img/bb/57b9c81b6dadb0c451adf2",
+    name: "酒类",
+    url: "/pages/shopList/shopList"
   }, {
-    url: "http://www.lsh123.com/img/bb/4536140a98ed604e5214f5",
-    name: "糖果休食"
+    src: "http://www.lsh123.com/img/bb/4536140a98ed604e5214f5",
+    name: "糖果休食",
+    url: "/pages/shopList/shopList"
   }, {
-    url: "http://www.lsh123.com/img/bb/1f48388f641bb615addbb5",
-    name: "调料干货"
+    src: "http://www.lsh123.com/img/bb/1f48388f641bb615addbb5",
+    name: "调料干货",
+    url: "/pages/shopList/shopList"
   }, {
-    url: "http://www.lsh123.com/img/bb/011ca600a92429e9425692",
-    name: "坚果炒货"
+    src: "http://www.lsh123.com/img/bb/011ca600a92429e9425692",
+    name: "坚果炒货",
+    url: "/pages/shopList/shopList"
   }
 ];
+
+let ads = [{ src: "http://140.143.192.36:67/101.jpg", url: "" }, { src: "http://140.143.192.36:67/102.jpg", url: "" }] ;
+
+let showDatas = [{
+  tempId: "tk_channel", datas: [{ title: "春天到了" }, { title: "夏天到了" }, { title: "岁月如流水，真长啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊" }]},
+  {
+    tempId: "tk_ad", datas: [{ src: "http://140.143.192.36:67/101.jpg", url:"" }, { src: "http://140.143.192.36:67/102.jpg", url:"" }]},
+  {
+    tempId: "tk_main_1_circle", title: "热门商品",mainurl:"baidu.com", head: { src: "http://140.143.192.36:67/101.jpg", url: "" },items:[
+      { src: "http://140.143.192.36:67/101.jpg", url: "" },
+      { src: "http://140.143.192.36:67/102.jpg", url: "" },
+      { src: "http://140.143.192.36:67/101.jpg", url:  "" },
+      { src: "http://140.143.192.36:67/101.jpg", url: "" }
+    ]
+  }
+
+
+
+];
+data[key("index")] = {
+  ads: ads,
+  /** 类目列表 */
+  cates: cates,
+  /** 广播频道 */
+  channel: [],
+  /** 展示模块 */
+  showDatas: showDatas
+
+};
 
 data[key("cate1")] = {
   navLeftItems: [{ id: 0, desc: "牧师" }, { id: 1, desc: "法师" }, { id: 2, desc: "战士" }],

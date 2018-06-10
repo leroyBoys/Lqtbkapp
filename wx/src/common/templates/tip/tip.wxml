@@ -1,0 +1,10 @@
+<!-- wetoast.wxml -->
+<template name="tk-alert-tip">
+  <!-- 自定义弹窗 -->
+  <view class="showModule fade_in" wx:if="{{text}}" >
+    <view class="showModuleContent">
+        <view class="text ">{{text}}</view>
+    </view>
+  </view>
+</template>
+

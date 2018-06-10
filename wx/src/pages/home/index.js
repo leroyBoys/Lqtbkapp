@@ -1,19 +1,18 @@
 // 获取全局应用程序实例对象
 const app = getApp()
-
 // 创建页面实例对象
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    title: "Index page",
-    userInfo: {}
+    title: "home"
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad () {
+    wx.tk_initFunctionPage(this);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -25,7 +24,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow () {
-    console.log(" ---------- onShow ----------")
   },
   /**
    * 生命周期函数--监听页面隐藏

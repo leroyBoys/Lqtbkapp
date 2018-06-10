@@ -1,0 +1,36 @@
+.showModule {
+  /* 用样式控制隐藏  visibility: hidden;*//* flex 布局 */
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  /* 生成绝对定位的元素，相对于浏览器窗口进行定位 */
+  position: fixed;
+  /* 如果 height,width 不变的情况下，left,top 不用修改 */
+  width:100%;
+  top: 40%;
+  background-color: rgba(0 , 0 , 0 , 0);
+}
+
+.showModuleContent{
+   width: 400rpx;
+   text-align: center;
+   padding: 30rpx;
+    background-color: rgba(0 , 0 , 0 , .5);
+  /* 圆角 */
+  border-radius: 30rpx;
+
+}
+.showModule .text {
+  /* 字体加粗 */
+  font-weight: bold;
+  color: white;
+  font-size: 13pt;
+  font-family: "微软雅黑";
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.fade_in {
+    animation: fadeIn 1s both;
+}

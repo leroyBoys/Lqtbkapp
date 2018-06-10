@@ -1,0 +1,137 @@
+.ad,.ad-swiper{
+  height:360rpx;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.ad{
+   height:300rpx;
+}
+
+.notice{
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  color: #000;
+  font-size: 15px;
+  position:relative; 
+}
+
+.lightbox{
+  width:100%;
+	 z-index:101; 
+	 height:80rpx;background-color:#FFF;
+	 opacity: 0.01; 
+	 position:absolute; 
+	 top:0px; left:0px;
+	 }
+
+.notice-list {
+  width: 80%;
+  margin-left: 20rpx;
+  border-left: 1px solid #f4f4f4;
+  margin-top: 4px;
+  padding-left: 20rpx;
+}
+
+.notice-list,.notice-list swiper,.swiper_item{
+   height:  32px;
+}
+
+.notice-list .swiper_item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/** tk_main_1_circle   */ 
+.title_center {
+  padding: 8px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.title_center .icon {
+  width: 40px;
+}
+
+.title_center text, .title_center .icon {
+  height: 20px;
+  line-height: 20px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.head {
+  height: 100px;
+}
+
+.head image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.recommend_hot_box_color{
+  background-color: #fff;
+}
+
+.recommend_scroll_x_box {
+  padding: 5px;
+  background-color: #FF99FF;
+  box-sizing: border-box;
+  height: 285rpx;
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.recommend_hot_box {
+  width: 188rpx;
+  height: 285rpx;
+  margin-right: 5px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.recommend_hot_image {
+  width: 100%;
+  height: 100%;
+}
+
+.recommend_hot_button {
+  width: 188rpx;
+  height: 285rpx;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.recommend_hot_more {
+  line-height: 150rpx;
+  text-align: center;
+  margin: auto;
+  width: 150rpx;
+  height: 150rpx;
+  color: #eee;
+  font-size: 12px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  overflow: hidden;
+}

@@ -7,14 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: "Index page",
-    userInfo: {}
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad () {
-  
+    wx.tk_initFunctionPage(this);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
