@@ -4,8 +4,7 @@
  * 用于将微信官方`API`封装为`Promise`方式
  * > 小程序支持以`CommonJS`规范组织代码结构
  */
-const util = require("utils/util.js")
-const config = require("utils/config.js")
+const myapp = require("utils/myapp.js")
 App({
   /**
    * Global shared
@@ -20,7 +19,7 @@ App({
    */
   onLaunch () {
   	//初始化方法 绑定
-    util.initFunctionBind(this);
+    myapp.init(this);
   },
   /**
    * 生命周期函数--监听小程序显示

@@ -7,7 +7,8 @@ Page({
   /** 系统配置 */
   systemConfig:{
     /**页面跳转的时候是否保存数据，如果false（默认）则直接卸载，下次重新加载 */
-    isSave:true
+    isSave:true,
+    functions: ["saoma"]
   },
   /**
    * 页面的初始数据
@@ -26,14 +27,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad () {
-    wx.tk_initFunctionPage(this);
+    wx.myapp.initPage(this)
     this.getMian();
+
   },
 
   getMian(){
     let page = this;
-    wx.tk_util.request(wx.tk_config.baseURL+"index","GET").then((res)=>{
-      console.log(res);
+    wx.myapp.shop.request("index","GET").then((res)=>{
         page.setData(res);
     });
   },

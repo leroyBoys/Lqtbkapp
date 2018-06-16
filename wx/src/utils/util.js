@@ -1,4 +1,4 @@
-const config = require("config.js");
+
 function formatTime(date) {
   var year = date.getFullYear();
   var month = date.getMonth() + 1;
@@ -17,7 +17,7 @@ function formatNumber(n) {
   return n[1] ? n : "0" + n;
 }
 
-function request(url, method = "GET", data = {}) {
+function request(host,url, method = "GET", data = {}) {
   let header = {
     "content-type": "application/json",
     "X-ECAPI-Sign": "",
@@ -33,7 +33,7 @@ function request(url, method = "GET", data = {}) {
 
   return new Promise(function (resolve, reject) {
     wx.request({
-      url: url,
+      url: host + url,
       method: method,
       data: data,
       header: header,
@@ -51,6 +51,10 @@ function request(url, method = "GET", data = {}) {
       }
     });
   });
+}
+
+function getKeyWords(res){
+  return [res, res, res];
 }
 
 function newThread(run){
@@ -92,63 +96,20 @@ function getCurPage() {
   return pages[pages.length - 1];
 }
 
-function alert(msg){
-  let page = getCurPage();
-  if (!page){
-    console.log("未初始化page,当前msg:"+msg);
-    return;
-  }
-  page.setData({
-    tipitem:{
-      text: msg
+
+function arrayToString(array){
+  console.log(array);
+  let str ="";
+  for(let i =0;i<array.length;i++){
+    if(i != 0){
+      str += ",";
     }
-  });
-  setTimeout(function(){
-    page.setData({
-      tipitem: {
-        text: null
-      }
-    });
-  },3000)
-}
-
-
-function bindSaoMa(page) {
-  page.saoma = function (event) {
-    
-    wx.scanCode({
-      success: (res) => {
-      },
-      fail: (res) => {
-        res.error = "fail";
-      },
-      complete: (res) => {
-        if (res.error){
-          alert(res);
-          return;
-        }
-        wx.showLoading({
-          title: "解析中",
-        })
-
-        realRequest(config.parseShopId(res.result)).then((res)=>{
-          wx.hideLoading();
-          if(res.error || res == 0){
-            alert("服务器解析失败，请手动填写商品id");
-            return;
-          }
-          alert(res);
-          wx.redirectTo({ url: config.shopDetail(res)});
-        }).catch((res)=>{
-          uploadLog(res);
-          alert("解析失败，请手动填写商品id");
-          wx.hideLoading();
-        });
-
-      }
-    })
+    str += array[i];
   }
+  return str;
 }
+
+
 function clickRedirectTo(e){
   let url = e.target.dataset ? e.target.dataset.url : null;
   if (!url) {
@@ -220,38 +181,100 @@ function downFile(url,obj,callback){
     }
   })
 }
+function saoma(e) {
+  let callback = this[e.currentTarget.dataset.suc];
+  callback = callback ? callback : function (res) { wx.myapp.alert("请设置suc方法，返回值:" + res)}
+  wx.scanCode({
+    success: (res) => {
+    },
+    fail: (res) => {
+      res.error = "fail";
+    },
+    complete: (res) => {
+      if (res.error) {
+        alert(res);
+        return;
+      }
+      callback(res);
+    }
+  })
+}
+function alert(msg) {
+  let page = getCurPage();
+  if (!page) {
+    console.log("未初始化page,当前msg:" + msg);
+    return;
+  }
+
+  console.log(msg);
+  page.setData({
+    tipitem: {
+      text: msg
+    }
+  });
+  setTimeout(function () {
+    page.setData({
+      tipitem: {
+        text: null
+      }
+    });
+  }, 3000)
+}
+
+/** 
+ * 点击事件触发自动修改切换相对应的属性和内容（只针对data的属性或者只有一层数组）
+ * 格式：
+ * data-attr="属性名字"或者  "数组属性名字,数组索引,属性名字"
+ * data-update="值1,值2"
+ */
+function bindToggleAttr(e) {
+  let switchName = e.currentTarget.dataset.attr;
+  if (!switchName || switchName.length == 0) {
+    console.error("参数缺少switchName");
+    return
+  }
+
+  let switchValue = e.currentTarget.dataset.update;
+  if (!switchValue || switchValue.length == 0) {
+    console.error("参数缺少switchValue");
+    return
+  }
+  let data = this.data;
+  let valueArray = switchValue.split(",");
+  let array = switchName.split(",");
+  let oldValue;
+  if (array.length == 3) {
+    oldValue = data[array[0]][array[1]][array[2]]
+  } else if (array.length == 1) {
+    oldValue = data[switchName];
+  } else {
+    console.error("参数缺少，格式,数组属性名字,数组索引,对象属性名字");
+    return
+  }
+
+  if (valueArray.length == 1) {
+    oldValue = switchValue;
+  } else if (oldValue == valueArray[0]) {
+    oldValue = valueArray[1];
+  } else {
+    oldValue = valueArray[0];
+  }
+  oldValue = oldValue == "null" ? null : oldValue
+
+  let newData = {};
+  if (array.length == 3) {
+    let targetIndexStr = array[0] + "[" + array[1] + "]." + array[2];
+    newData[targetIndexStr] = oldValue
+  } else if (array.length == 1) {
+    newData[switchName] = oldValue
+  }
+  this.setData(newData);
+}
 
 /** 错误日志上报 */
 function uploadLog(msg){
 
   console.log(msg+"错误日志上报");
-}
-
-/**初始化绑定wx事件 */
-function initFunctionBind(app) {
-  //绑定alert
-  wx.tk_alert = alert;
-  wx.tk_uploadLog = uploadLog;
-  wx.tk_initFunctionPage = initFunctionPage;
-  wx.tk_util = utilData;
-  wx.tk_config = config;
-}
-
-function initFunctionPage(page){
-  console.log(page.route+":初始化 initFunctionPage page.initFunctionPage:" + page.initFunctionPage + " ");
-  if (page.initFunctionPage){
-    return;
-  }
-  let onshow = page.onShow;//绑定自定义onshow（含原先的onshow）方法
-  page.onShow = function(res){
-    wx.curPage = page;
-    onshow();
-  }
-
-  //绑定统一的clickLink标签方式
-  page.clickLink = clickLink;
-  page.clickRedirectTo = clickRedirectTo;
-
 }
 
 /**正式测试环境切换路由 */
@@ -264,14 +287,17 @@ try{
 }catch(e){
 }
 
-let utilData = {
-  formatTime: formatTime,
-  request: realRequest,
-  realRequest: request,
-  showToast: showToast,
-  bindSaoMa: bindSaoMa,
-  initFunctionBind: initFunctionBind,
-  newThread: newThread,
-  downFile: downFile
+module.exports = {
+  formatTime,
+  request,
+  realRequest,
+  showToast,
+  newThread,
+  clickLink,
+  alert,
+  uploadLog,
+  downFile,
+  getKeyWords,
+  arrayToString,
+  saoma
 }
-module.exports = utilData

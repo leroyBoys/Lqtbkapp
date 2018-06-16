@@ -1,7 +1,7 @@
 <include src="../../common/templates/templates.wxml"/>
-
 <view class="container">
-
+  
+  <include src="../../common/templates/header/header.wxml"/>
  <!-- 轮播图 start -->
     <template is="tk_ad_swiper" data="{{datas:ads}}"></template>
 

@@ -48,14 +48,23 @@
 </template>
 
 
-<template name="tk_main_1_circle">
-
-  <view class="template">
+<template name="tk_main_title">
+    <block wx:if="{{title}}">
         <view class="title_center">
             <image wx:if="{{icon_first}}" class="icon" src="{{icon_first}}"/>
             <text>{{title}}</text>
             <image wx:if="{{icon_second}}" class="icon" src="{{icon_second}}"/>
         </view>
+      </block>
+</template>
+
+
+<!-- tk_main_1_circle -->
+
+<template name="tk_main_1_circle">
+
+  <view class="template_main_1_circle">
+     
         <view wx:if="{{head}}" class="head">
           <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
         </view>
@@ -80,3 +89,28 @@
 
 </template>
   
+
+  
+<!-- tk_main_1_list -->
+
+<template name="tk_main_1_list">
+
+  <view class="template_main_1_list">
+        <view wx:if="{{head}}" class="head">
+          <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
+        </view>
+
+        <view class="venues_box">
+                <view class="venues_list">
+                    <block wx:for="{{items}}" wx:key="{{item}}">
+                        <view class="venues_item  {{index%2==0?'':'venues_item_second'}}">
+                            <navigator url="{{item.url}}">
+                                <image src="{{item.src}}"/>
+                            </navigator>
+                        </view>
+                    </block>
+                </view>
+            </view>
+              
+  </view>
+</template>

@@ -1,0 +1,4 @@
+.container,.container .fullimage,.fullimage-item {
+    width: 100%;
+    height: 100%;
+  }

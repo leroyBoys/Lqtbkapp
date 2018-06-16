@@ -1,0 +1,15 @@
+<view class="container">
+
+  <block wx:if="{{!images || images.length ==0}}">
+  </block>
+   <block wx:elif="{{images.length == 1}}">
+    <image class='fullimage-item' mode="aspectFill" src="{{images[0]}}" />
+  </block>
+  <block wx:else>
+    <swiper class='fullimage'>
+      <swiper-item>
+        <image class='fullimage-item' mode="aspectFill" src="{{src}}" />
+      </swiper-item>
+    </swiper>
+  </block> 
+</view>

@@ -1,2 +1,4 @@
 <import src="tip/tip.wxml"/>
 <import src="ad/ad.wxml"/>
+
+<template is="tk-alert-tip" data="{{...tipitem}}"/>

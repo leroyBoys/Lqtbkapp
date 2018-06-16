@@ -1,5 +1,5 @@
 @import "../../common/templates/ad/ad.wxss";
-
+@import "../../common/templates/header/header.wxss";
 /** 分类推荐 **/
 
 .cates {

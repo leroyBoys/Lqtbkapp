@@ -37,6 +37,8 @@ let cates = [
 let ads = [{ src: "http://140.143.192.36:67/101.jpg", url: "" }, { src: "http://140.143.192.36:67/102.jpg", url: "" }] ;
 
 let showDatas = [{
+  tempId: "tk_main_title", title: "1月抢购"
+},{
   tempId: "tk_channel", datas: [{ title: "春天到了" }, { title: "夏天到了" }, { title: "岁月如流水，真长啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊" }]},
   {
     tempId: "tk_ad", datas: [{ src: "http://140.143.192.36:67/101.jpg", url:"" }, { src: "http://140.143.192.36:67/102.jpg", url:"" }]},
@@ -47,12 +49,22 @@ let showDatas = [{
       { src: "http://140.143.192.36:67/101.jpg", url:  "" },
       { src: "http://140.143.192.36:67/101.jpg", url: "" }
     ]
+  },
+  {
+    tempId: "tk_main_title", title: "超级热门"},
+  {
+    tempId: "tk_main_1_list",  mainurl: "baidu.com", head: { src: "http://140.143.192.36:67/102.jpg", url: "" }, items: [
+      { src: "http://140.143.192.36:67/101.jpg", url: "" },
+      { src: "http://140.143.192.36:67/101.jpg", url: "" },
+      { src: "http://140.143.192.36:67/101.jpg", url: "" },
+      { src: "http://140.143.192.36:67/101.jpg", url: "" }
+    ]
   }
 
 
 
 ];
-data[key("index")] = {
+data["index"] = {
   ads: ads,
   /** 类目列表 */
   cates: cates,
@@ -62,6 +74,7 @@ data[key("index")] = {
   showDatas: showDatas
 
 };
+data["hot"]="我装作无动于衷,多想问你，究竟爱谁，怎么怪她犯了错";
 
 data[key("cate1")] = {
   navLeftItems: [{ id: 0, desc: "牧师" }, { id: 1, desc: "法师" }, { id: 2, desc: "战士" }],
@@ -69,6 +82,9 @@ data[key("cate1")] = {
   { id: 114, nodes: [{ logo: pic("1.jpg"), desc: "逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }] }
   ]
 };
+data[config.hotSearchUrl]=["我知道","我不知道","昨天"];
+
+
 
 function pic(img) {
   return "../../tmp/images/" + img;
@@ -81,33 +97,11 @@ function key(key) {
 }
 
 function request(url, method = "GET", redata = {}) {
-  var redata = new Array();
-  if (url == config.baseURL + "1") {
-    redata.push({ src: pic("1.jpg") });
-    data.push({ src: pic("2.jpg") });
-  } else if (url == config.baseURL + "2") {
-    redata.push({ title: "你牛逼" });
-    redata.push({ title: "单身贵族" });
-  } else if (url == config.baseURL + "3") {
-    redata.push({ src: pic("1.jpg"), id: 110, name: "niubai", current_price: 11 });
-    redata.push({ src: pic("2.jpg"), id: 112, name: "n哈哈ai", current_price: 11 });
-   
-    redata = {
-      good_products: redata,
-      hot_products: [{ src: pic("2.jpg"), id: 112, name: "n哈哈ai", current_price: 11 }],
-      recently_products: redata
-    };
-  } else if (url == config.baseURL + "6") {
-    redata.push({ id: 11, name: "就是你", categories: { id: 121, name: "h哈哈" } });
-    redata.push({ id: 12, name: "登录", categories: { id: 123, name: "看看哈哈" } });
-  } else if (url == config.baseURL + "7") {
-    redata.push({ id: 11, name: "就是你", categories: { id: 121, name: "h哈哈" } });
-    redata.push({ id: 12, name: "登录", categories: { id: 123, name: "看看哈哈" } });
-  } else {
-    redata = data[url];
-  }
 
- 
+  var redata = new Array();
+    redata = data[url];
+
+    console.log("===假数据:url:" + url, redata);
   return new Promise(function (resolve, reject) {
     resolve(redata);
   });

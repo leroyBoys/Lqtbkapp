@@ -1,0 +1,51 @@
+@import "../../plugins/font.wxss";
+.headhide,.header {
+    height: 100rpx;
+    width: 100%;
+    position: static;
+    background-color: #f4f4f4;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.header .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 60rpx;
+    font-weight: normal;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    padding: 0 28rpx 14rpx 28rpx;
+    font-size: 28rpx;
+}
+.main .search,.main .pre,.main .next{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.header .main .search{
+    border-bottom: 1px solid #70bcf6; 
+    border-radius: 8rpx;
+    width: 80%;
+    height:26px;
+}
+
+.main icon{
+   font-size: 24px;
+}
+.search .input {
+    flex: 1;
+    height:1.5rem;
+}
+.search .place-holder {
+    color: #333;
+    text-align: center;
+}

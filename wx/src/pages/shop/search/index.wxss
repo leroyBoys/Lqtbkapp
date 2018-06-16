@@ -1,0 +1,108 @@
+/* pages/shop/search/index.wxss */
+@import "../../../common/templates/ad/ad.wxss";
+@import "../../../common/templates/header/header.wxss";
+.nav{
+    position: relative;
+    z-index: 99;
+    display: flex;
+    border-top: 1px solid #d1d3d4;
+    border-bottom: 1px solid #d1d3d4;
+    background: #fff;
+}
+.nav-son{
+    display: flex;
+    flex: 1;
+    text-align: center;
+    height: 40px;
+    align-items:center;
+    justify-content:center;
+    font-size: 14px;
+}
+.border-right{
+    border-right: 1px solid #e6e6e6;
+}
+
+
+.content{
+    display: block;
+    width: 100%
+}
+
+.content view{
+   display: inline-block;
+}
+.icon{
+    border: 4px solid transparent;
+    border-top: 4px solid #9b9b9b;
+    margin-left: 5px;
+}
+.border-bottom{
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.label .center{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.center .middle{
+  margin:0 10px
+}
+.center input{
+  text-align: center;
+  background: #E8E8E8;
+}
+.selectContent{
+    position: relative;
+    z-index: 4;
+    width: 100%;
+}
+
+.shaixuanContent{
+    width: 100%;
+    max-height: 750rpx;
+    overflow-y: scroll;
+    line-height:80rpx;
+    background: #fff;
+}
+
+.selectContent view{
+    font-size: 14px;
+    color: #666;
+}
+
+.youhuizhekou{
+  border: none;
+  margin-top: 0;
+}
+.fullbg{
+    position: fixed;
+    top:0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgb(1, 1, 1);
+    transition: all 2s;
+    opacity: 0;
+}
+.fullopacity{
+    opacity: .5;
+}
+.nav-son.active .content{
+    color: #61beff;
+}
+.nav-son.active .icon{
+    border-bottom: 4px solid #61beff;
+    border-top:0;
+}
+.label{
+  width: 100%;
+  box-sizing:border-box;
+  padding: 2px 15px;
+}
+
+.shaixuanbutton{
+  width: 100%;
+}

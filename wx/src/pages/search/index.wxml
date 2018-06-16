@@ -1,7 +1,41 @@
-<view class="container">
-  <text class="title">{{ title }}</text>
-  <view class="info">
-    <image src="{{userInfo.avatarUrl}}"/>
-    <text>{{ userInfo.nickName }}</text>
-  </view>
-</view>
+ <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="美丽姑娘" value="{{keyword}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{keyword.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+            </view>
+          
+            <button class="weui-search-bar__cancel-btn" bindtap='beginSearch' data-value='{{keyword}}' >搜索</button>
+        </view>
+
+
+        <view class="area" wx:if="{{(!keyword || keyword.length == 0 ) && historys && historys.length>0}}">
+        <view class='title'>历史搜索 </view>
+        <view  class="history">
+            <view class="tag"  wx:for="{{historys}}" wx:key="this*" bindtap='beginSearch' data-value='{{item}}'>
+                {{item}}
+            </view>  
+          </view>
+        </view>
+
+    <view class="area" wx:if="{{(!keyword || keyword.length == 0 ) && hots && hots.length>0}}">
+        <view class='title'>热门搜索 </view>
+        <view  class="history">
+           <view class="tag"  wx:for="{{hots}}" wx:key="this*" bindtap='beginSearch' data-value='{{item}}'>
+                {{item}}
+            </view>  
+          </view>
+        </view>
+
+        <view class="weui-cells searchbar-result" wx:if="{{keyword.length > 0}}">
+           <view  class="weui-cell__bd weui-cell" bindtap='beginSearch' hover-class="weui-cell_active"  wx:for="{{keywords}}" wx:key="this*" data-value='{{item}}' >{{item}}
+               </view>
+        </view>
+
+    </view>

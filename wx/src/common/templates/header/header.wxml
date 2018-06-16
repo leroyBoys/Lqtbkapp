@@ -1,0 +1,23 @@
+<!--公共header模块-->
+
+<view class="header">
+  <view class="main">
+
+    <view class='pre'>
+      <icon class='iconfont icon-caidanlan' bindtap="openmenulist" />
+    </view>
+
+    <view class='search'>
+      <icon type="search" size="18"/>
+      <input class="input" disabled='true' bindtap='clickLink' data-url='/pages/search/index?inputShowed=true&keyword={{keyword}}' placeholder="请输入您要搜索的商品" value="{{keyword?keyword:''}}" type="search" placeholder-class="place-holder" />
+    </view>
+
+    <view class='next'>
+      <icon class='iconfont icon-scancode' bindtap="saoma" data-suc='parseshop'/>
+    </view>
+
+
+  </view>
+
+</view>
+<view class="headhide"></view>

@@ -1,46 +1,66 @@
-// 获取全局应用程序实例对象
-const app = getApp()
-// 创建页面实例对象
+// pages/images/index.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    title: "home"
+    images:[]
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad () {
-    wx.myapp.initPage(this)
+  onLoad: function (options) {
+    
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady () {
-    console.log(" ---------- onReady ----------")
+  onReady: function () {
+  
   },
+
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow () {
+  onShow: function () {
+  
   },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide () {
-    console.log(" ---------- onHide ----------")
+  onHide: function () {
+  
   },
+
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload () {
-    console.log(" ---------- onUnload ----------")
+  onUnload: function () {
+  
   },
+
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh () {
-    console.log(" ---------- onPullDownRefresh ----------")
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
   }
 })
