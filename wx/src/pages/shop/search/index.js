@@ -9,11 +9,19 @@ Page({
    */
   data: {
     shownavindex:0,
-    formData:[],
-    pricemin:0,
-    pricemax: 0,
-    youhui:0,
-    zhekou: 0
+    hideForm:false,
+    youhui:[
+      {
+        name: '优惠券',
+        value: '1',
+        checked: !1,
+      },
+      {
+        name: '打折',
+        value: '2',
+        checked: !1,
+      }
+    ]
   },
 
   /**
@@ -27,6 +35,24 @@ Page({
     }
   },
 
+  showForm:function(){
+    if (!this.data.hideForm){
+      return
+    }
+    this.data.hideForm = false;
+    this.setData({
+      hideForm: false
+    });
+  },
+  hideForm: function () {
+    if (this.data.hideForm) {
+      return
+    }
+    this.data.hideForm = true;
+    this.setData({
+      hideForm: true
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

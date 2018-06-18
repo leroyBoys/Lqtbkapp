@@ -16,8 +16,6 @@ Page({
    */
   onLoad (options) {
     wx.myapp.initPage(this)
-    console.log("======",this);
-
     this.showHistory();
 
     if (options){
@@ -88,6 +86,13 @@ Page({
       let cache = wx.myapp;
 
       cache.searchHistory.update(txt);
+      if (txt=="整点秒杀") {
+        wx.redirectTo({
+          url: '/pages/shop/miaosha/index',
+        })
+        return
+      }
+
         wx.redirectTo({
           url: '/pages/shop/search/index?keyword=' + e.target.dataset.value,
         })

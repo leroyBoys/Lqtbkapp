@@ -1,3 +1,6 @@
+<include src="../../../common/templates/templates.wxml" />
+
+
 <view class='miaosha_container'>
 
 <view class='desc clearfix'>
@@ -28,6 +31,9 @@
 
 
 <view class='container'>
+
+  <template is="tk-tuangou-list-2" data="{{goods:[1,2,2,3,6,4,51,2,3,6,4,51,2,3,6,4,5]}}" />
+
 
 </view>
 </view>

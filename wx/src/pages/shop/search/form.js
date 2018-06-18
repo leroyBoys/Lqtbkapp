@@ -1,12 +1,13 @@
 module.exports = {
 
   sortNow: function (e) {
-    if (this.data.shownavindex == e.currentTarget.dataset.nav) {
-      return
+    let targetIndex = 0;
+    if (this.data.shownavindex != e.currentTarget.dataset.nav) {
+      targetIndex = e.currentTarget.dataset.nav;
     }
 
     this.setData({
-      shownavindex: e.currentTarget.dataset.nav
+      shownavindex: targetIndex
     })
 
     if (e.currentTarget.dataset.nav == 4) {
@@ -20,8 +21,19 @@ module.exports = {
       shownavindex: 0
     })
   },
-  youhuiclick: function (e) {
-    e.currentTarget.dataset.name;
+  bindscroll:function(e){
+    console.log(e);
+    if (e.detail.scrollTop>50){
+      this.hideForm();
+    }else{
+      this.showForm();
+    }
+    if (this.data.shownavindex != 4){
+      return
+    }
+    this.setData({
+      shownavindex: 0
+    })
 
   },
   priceChange: function (e) {-

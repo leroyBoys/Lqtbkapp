@@ -3,7 +3,7 @@ const util = require("./util")
 const shop = require("./server/shop.js")
 
 module.exports={
-  defaultFunctions :[util.clickLink],
+  defaultFunctions: [util.clickLink, util.bindToggleAttr],
   saoma :[util.saoma, shop.parseshop],
-  form :[]
+  form: [util.bindchange]
 }

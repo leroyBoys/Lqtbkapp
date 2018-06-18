@@ -7,24 +7,24 @@ Page({
    */
   data: {
     title: "home",
-    timeindex:-1,
-    userchoiceIdex:0,
-    timeZones:[
-    "00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00",
+    timeindex: -1,
+    userchoiceIdex: 0,
+    timeZones: [
+      "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00",
       "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"
     ]
   },
-  checktime:function(page){
+  checktime: function (page) {
     //console.log(page.route + "===============checktime==============", wx.curPage);
-    if (wx.curPage && page.route != wx.curPage.route){
-        return
+    if (wx.curPage && page.route != wx.curPage.route) {
+      return
     }
-    let date = new Date(); 
+    let date = new Date();
     let hour = date.getHours()
     let min = date.getMinutes()
-    
+
     let timeindex = this.data.timeindex;
-    if (timeindex == -1){
+    if (timeindex == -1) {
       timeindex = 0;
 
       let zones = this.data.timeZones;
@@ -35,45 +35,45 @@ Page({
         }
         console.log(hour + "-----" + md);
         timeindex++
-       
-      } 
+
+      }
       this.data.userchoiceIdex = timeindex;
       this.setData({
         userchoiceIdex: this.data.userchoiceIdex
       });
-    }else{
+    } else {
       let md = this.data.timeZones[timeindex].split(":")[0];
       if (md < hour) {
-         md++;
-         if (md == 24) {
-           timeindex = 0;
-         } else {
-           timeindex++;
-         }
-      } 
+        md++;
+        if (md == 24) {
+          timeindex = 0;
+        } else {
+          timeindex++;
+        }
+      }
     }
     let countDownTime;
-    if (timeindex == this.data.timeZones.length - 1){
+    if (timeindex == this.data.timeZones.length - 1) {
       countDownTime = wx.myapp.countDownTime("24")
 
-    }else{
-      countDownTime = wx.myapp.countDownTime(this.data.timeZones[timeindex+1]);
+    } else {
+      countDownTime = wx.myapp.countDownTime(this.data.timeZones[timeindex + 1]);
     }
-    let str="";
+    let str = "";
 
-    if (timeindex != this.data.timeindex){
+    if (timeindex != this.data.timeindex) {
       this.data.timeindex = timeindex;
       this.setData({
         timeindex: timeindex,
         countDownTime: countDownTime
       });
-    }else{
+    } else {
       this.setData({
         countDownTime: countDownTime
       });
     }
 
-    setTimeout(n => { this.checktime(page) },1000);
+    setTimeout(n => { this.checktime(page) }, 1000);
   },
   choiceTime: function (e) {
     console.log(e);
@@ -86,38 +86,38 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad () {
+  onLoad() {
     wx.myapp.initPage(this);
     this.checktime(this);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady () {
+  onReady() {
     console.log(" ---------- onReady ----------")
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow () {
+  onShow() {
     this.checktime(this);
   },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide () {
+  onHide() {
     console.log(" ---------- onHide ----------")
   },
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload () {
+  onUnload() {
     console.log(" ---------- onUnload ----------")
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh () {
+  onPullDownRefresh() {
     console.log(" ---------- onPullDownRefresh ----------")
   }
 })

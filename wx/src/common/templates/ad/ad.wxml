@@ -63,7 +63,7 @@
 
 <template name="tk_main_1_circle">
 
-  <view class="template_main_1_circle">
+  <view class="template_main_1_circle ad_list">
      
         <view wx:if="{{head}}" class="head">
           <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
@@ -95,7 +95,7 @@
 
 <template name="tk_main_1_list">
 
-  <view class="template_main_1_list">
+  <view class="template_main_1_list ad_list">
         <view wx:if="{{head}}" class="head">
           <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
         </view>

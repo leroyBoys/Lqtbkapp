@@ -15,7 +15,9 @@
         </view>
 
 
-        <view class="area" wx:if="{{(!keyword || keyword.length == 0 ) && historys && historys.length>0}}">
+      <block wx:if="{{!keywords || keywords.length == 0}}">
+
+        <view class="area" wx:if="{{historys && historys.length>0}}">
         <view class='title'>历史搜索 </view>
         <view  class="history">
             <view class="tag"  wx:for="{{historys}}" wx:key="this*" bindtap='beginSearch' data-value='{{item}}'>
@@ -24,7 +26,7 @@
           </view>
         </view>
 
-    <view class="area" wx:if="{{(!keyword || keyword.length == 0 ) && hots && hots.length>0}}">
+    <view class="area" wx:if="{{hots && hots.length>0}}">
         <view class='title'>热门搜索 </view>
         <view  class="history">
            <view class="tag"  wx:for="{{hots}}" wx:key="this*" bindtap='beginSearch' data-value='{{item}}'>
@@ -33,9 +35,11 @@
           </view>
         </view>
 
-        <view class="weui-cells searchbar-result" wx:if="{{keyword.length > 0}}">
+  </block>
+  <block wx:else>
+        <view class="weui-cells searchbar-result">
            <view  class="weui-cell__bd weui-cell" bindtap='beginSearch' hover-class="weui-cell_active"  wx:for="{{keywords}}" wx:key="this*" data-value='{{item}}' >{{item}}
                </view>
         </view>
-
+</block>
     </view>

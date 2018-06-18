@@ -74,7 +74,7 @@ data["index"] = {
   showDatas: showDatas
 
 };
-data["hot"]="我装作无动于衷,多想问你，究竟爱谁，怎么怪她犯了错";
+data["hot"] ="整点秒杀,我装作无动于衷,多想问你,究竟爱谁,怎么怪她犯了错";
 
 data[key("cate1")] = {
   navLeftItems: [{ id: 0, desc: "牧师" }, { id: 1, desc: "法师" }, { id: 2, desc: "战士" }],
@@ -82,9 +82,6 @@ data[key("cate1")] = {
   { id: 114, nodes: [{ logo: pic("1.jpg"), desc: "逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }, { logo: pic("2.jpg"), desc: "不逗逼" }] }
   ]
 };
-data[config.hotSearchUrl]=["我知道","我不知道","昨天"];
-
-
 
 function pic(img) {
   return "../../tmp/images/" + img;

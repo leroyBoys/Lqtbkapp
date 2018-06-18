@@ -78,11 +78,11 @@
   display: inline-block;
 }
 
-.head {
+.ad_list .head {
   height: 100px;
 }
 
-.head image {
+.ad_list .head image {
   width: 100%;
   height: 100%;
   display: block;

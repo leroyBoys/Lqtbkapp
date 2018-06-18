@@ -1,15 +1,12 @@
 @import "../../plugins/font.wxss";
 .headhide,.header {
-    height: 100rpx;
     width: 100%;
-    position: static;
+    height: 100rpx;
     background-color: #f4f4f4;
 }
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
+    z-index: 100;
 }
 .header .main {
     display: flex;
@@ -22,7 +19,7 @@
     margin: 0 auto;
     margin-top: 20rpx;
     padding: 0 28rpx 14rpx 28rpx;
-    font-size: 28rpx;
+    font-size: 14px;
 }
 .main .search,.main .pre,.main .next{
     display:flex;
@@ -32,8 +29,10 @@
 }
 
 .header .main .search{
-    border-bottom: 1px solid #70bcf6; 
+    border-bottom: 1px solid #d1d3d4; 
     border-radius: 8rpx;
+    box-sizing: border-box;
+    padding-left: 5px;
     width: 80%;
     height:26px;
 }
@@ -44,6 +43,7 @@
 .search .input {
     flex: 1;
     height:1.5rem;
+    margin-left: 5px; 
 }
 .search .place-holder {
     color: #333;

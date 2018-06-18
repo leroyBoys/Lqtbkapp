@@ -1,0 +1,198 @@
+ 
+ <template name="tk-tuangou-1">
+ <view class="goods-item">
+            <view class="goods" bindtap='todetail'>
+                <view class="goods-tag ten" />
+                <image mode='widthFix' class="goods-image" src="http://res.126.net/p/dbqb/one/168/1168/6abc05894e903b9749166c224d739838.png" />
+                <view class="desc-wrapper">
+                    <view class="goods-desc">Apple Watch Sport 38毫米 铝金属表壳 运动表带</view>
+                </view>
+            </view>
+            <view class="operating">
+                <view class="tips">拼团进度<span>{{0.19 * 100}}%</span></view>
+                <view class="progress" style="width: calc(100% - 76px);"></view>
+                <view class="progress-take" style="width: calc((100% - 76px) * {{goods.takeRate}} );"></view>
+                 <view class="btn">立刻购买</view>
+            </view>
+        </view>
+
+        </template>
+
+
+
+<template name="tk-tuangou-list-1">
+ <view class='goods-panel'>
+  <block wx:for="{{goods}}" wx:key="this*">
+        <view class="shopdiv {{index % 2 == 0?' odd':''}}">
+           <template is="tk-tuangou-1" data="{{...item}}"/>
+        </view>
+        
+    </block>
+
+ </view>
+</template>
+
+
+
+
+
+ <template name="tk-tuangou-2">
+<view class='goods-item2 weui-flex'>
+  <image mode='widthFix' class="goods-image" src="http://res.126.net/p/dbqb/one/168/1168/6abc05894e903b9749166c224d739838.png" />
+
+  <view class='content'>
+    <view class='title weui-flex'>
+     <icon class='iconfont icon-tao icon'/> <icon class='iconfont icon-mao icon'/>
+    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上
+    </view>
+    <view style='height:36px;overflow:hidden'>
+      <view class='weui-flex tags'>
+      <view class='tag'>热销</view><view class='tag'>热销</view> 
+      </view>
+    </view>
+    <view class='foot weui-flex'>
+      <view class='left placeholder'> 
+          <view><text class="oldprice" class="line-font">9998</text><text class='curprice'>￥88</text></view>
+          <view>已售:4444ssss</view>
+      </view>
+      <view class='right weui-flex'>
+        <view class='button'>
+            去团购
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+</view>
+
+ </template>
+
+
+<template name="tk-tuangou-list-2">
+ <view class='goods-panel'>
+  <block wx:for="{{goods}}" wx:key="this*">
+      <template is="tk-tuangou-2" data="{{...item}}"/>
+    </block>
+
+ </view>
+</template>
+
+
+
+
+
+
+
+
+ <template name="tk-shop-1">
+<view class='goods-item2 weui-flex'>
+  <image mode='widthFix' class="goods-image" src="http://res.126.net/p/dbqb/one/168/1168/6abc05894e903b9749166c224d739838.png" />
+
+  <view class='content'>
+    <view class='title weui-flex'>
+     <icon class='iconfont icon-tao icon'/> <icon class='iconfont icon-mao icon'/>
+    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上
+    </view>
+    <view style='height:32px;overflow:hidden'>
+      <view class='weui-flex tags'>
+      <view class='quan'>满50 减 40</view><view class='quan'>满50 减 40</view> <view class='quan'>包邮</view> 
+      </view>
+    </view>
+    <view class='foot weui-flex'>
+          <view class='price'>￥83</view>
+          <view class='xiaoliang'>10000人付款</view>
+              <view class='provice'>郑州</view>
+     </view>
+  </view>
+
+</view>
+
+ </template>
+
+ 
+<template name="tk-shop-list-1">
+ <view class='goods-panel'>
+  <block wx:for="{{goods}}" wx:key="this*">
+      <template is="tk-shop-1" data="{{...item}}"/>
+    </block>
+
+ </view>
+</template>
+
+
+
+
+
+
+
+ <template name="tk-shop-2">
+<view class="goods-item3">
+  <view class='shop-image'>
+
+          <view class='icon'>
+              <view class="parent">
+                  <view class="text">热销</view>
+                  <view class="triangle-topleft">
+                  </view>
+              </view>
+          </view>
+              <image mode='aspectFill' src="http://img.alicdn.com/imgextra/i1/1714125670/TB2iibdkNSYBuNjSsphXXbGvVXa_!!1714125670.jpg_310x310.jpg"></image>
+              
+       
+  </view>
+
+    <view class='content'>
+        <view class='head line clearfix'>
+            <view class='float_left weui-flex'>
+            ￥
+               <view class='curprice'>
+               99
+              </view>
+              <view class='oldprice line-fone'>
+              8888
+              </view>
+            </view>
+         
+
+             <view class='juan float_right'>
+             满40减50
+            </view>
+
+        </view>
+        <view class='title'>
+            又是一年光阴似流水   又是一年光阴似流水   又是一年光阴似流水   又是一年光阴似流水
+        </view>
+
+         <view class='foot line clearfix'>
+            <view class='float_left weui-flex'>
+              <text>销量</text>
+             <view class='num'>9999</view>
+            </view>
+             <view class='float_right'>
+                <icon class='iconfont icon-tao icon'/> <icon class='iconfont icon-mao icon'/>
+            </view>
+
+        </view>
+
+    </view>    
+  
+ </view>
+
+ </template>
+
+
+
+  
+<template name="tk-shop-list-2">
+ <view class='goods-panel'>
+  <block wx:for="{{goods}}" wx:key="this*">
+           <view class="shopdiv {{index % 2 == 0?' odd':''}}">
+      <template is="tk-shop-2" data="{{...item}}"/>
+      </view>
+
+      
+    </block>
+
+ </view>
+</template>

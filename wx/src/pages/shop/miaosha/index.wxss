@@ -1,3 +1,4 @@
+@import "../../../common/templates/shop/tuangou1.wxss";
 .miaosha {
   width: 100%;
   height: 78px;

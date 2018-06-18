@@ -12,6 +12,72 @@ function formatTime(date) {
   return [year, month, day].map(formatNumber).join("/") + " " + [hour, minute, second].map(formatNumber).join(":");
 }
 
+function countDownTime(time) {
+  let timeArray = time.split(":");
+  let targetHour = 1;
+  let targetMin = 0;
+  let targetSec = 0;
+  if (timeArray.length == 1) {
+    targetHour = parseInt(timeArray[0]);
+  } else if (timeArray.length == 2) {
+    targetHour = parseInt(timeArray[0]);
+    targetMin = parseInt(timeArray[1]);
+  }else{
+    targetHour = parseInt(timeArray[0]);
+    targetMin = parseInt(timeArray[1]);
+    targetSec = parseInt(timeArray[2]);
+  }
+
+  let target = targetHour * 3600 + targetMin * 60 + targetSec;
+
+  let date = new Date();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  let now = hour * 3600 + minute * 60 + second;
+
+  let dif = target - now;
+  hour = Math.floor(dif/3600);
+  dif = dif % 3600;
+  minute = Math.floor(dif/60);
+  dif = dif % 60;
+  second = Math.floor(dif);
+  
+  return [hour, minute, second].map(formatNumber).join(":")
+}
+
+function countDownDate(time) {
+  let timeArray = time.split(":");
+  let targetHour = 1;
+  let targetMin = 0;
+  let targetSec = 0;
+  if (timeArray.length == 1) {
+    targetHour = parseInt(timeArray[0]);
+  } else if (timeArray.length == 2) {
+    targetHour = parseInt(timeArray[0]);
+    targetMin = parseInt(timeArray[1]);
+  } else {
+    targetHour = parseInt(timeArray[0]);
+    targetMin = parseInt(timeArray[1]);
+    targetSec = parseInt(timeArray[2]);
+  }
+  let target = targetHour * 3600 + targetMin * 60 + targetSec;
+
+  let date = new Date();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  let now = hour * 3600 + minute * 60 + second;
+
+  let dif = target - now;
+  hour = dif / 3600;
+  dif = dif % 3600;
+  minute = dif / 60;
+  dif = dif % 60;
+  second = dif / 60;
+  return [hour, minute, second];
+}
+
 function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : "0" + n;
@@ -221,6 +287,25 @@ function alert(msg) {
   }, 3000)
 }
 
+function bindchange(e){
+    console.log(e);
+    let values = e.detail.value;
+    let switchName = e.currentTarget.dataset.attr;
+    if (!switchName || switchName.length == 0) {
+      console.error("参数缺少attr");
+      return
+    }
+
+    let newData = {};
+    newData[switchName] = this.data[switchName].map(n=>{
+      return Object.assign({}, n, {
+        checked: values.includes(n.value),
+      })
+    })
+   
+    this.setData(newData)
+}
+
 /** 
  * 点击事件触发自动修改切换相对应的属性和内容（只针对data的属性或者只有一层数组）
  * 格式：
@@ -230,13 +315,13 @@ function alert(msg) {
 function bindToggleAttr(e) {
   let switchName = e.currentTarget.dataset.attr;
   if (!switchName || switchName.length == 0) {
-    console.error("参数缺少switchName");
+    console.error("参数缺少attr");
     return
   }
 
   let switchValue = e.currentTarget.dataset.update;
   if (!switchValue || switchValue.length == 0) {
-    console.error("参数缺少switchValue");
+    console.error("参数缺少update");
     return
   }
   let data = this.data;
@@ -269,6 +354,10 @@ function bindToggleAttr(e) {
     newData[switchName] = oldValue
   }
   this.setData(newData);
+  if (this.bindToggleAttrSuc){
+    this.bindToggleAttrSuc(e);
+  }
+ 
 }
 
 /** 错误日志上报 */
@@ -281,7 +370,7 @@ function uploadLog(msg){
 let realRequest = request;
 try{
   const dev = require("../tmp/dev.js");
-  if (dev && dev.request) {
+  if (dev && dev.request && dev.isTest) {
     realRequest = dev.request;
   }
 }catch(e){
@@ -299,5 +388,10 @@ module.exports = {
   downFile,
   getKeyWords,
   arrayToString,
-  saoma
+  saoma,
+  bindToggleAttr,
+  bindchange,
+  countDownTime,
+  countDownDate
+  
 }

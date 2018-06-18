@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/home/index",
+    
       "pages/index/index",
     "pages/shop/search/index",
-    "pages/home/index",
-
+    "pages/shop/miaosha/index",
     "pages/search/index",
     "pages/images/index",
     "activity/choujiang/index"

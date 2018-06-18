@@ -1,4 +1,5 @@
 <import src="tip/tip.wxml"/>
 <import src="ad/ad.wxml"/>
+<import src="shop/tuangou1.wxml"/>
 
 <template is="tk-alert-tip" data="{{...tipitem}}"/>

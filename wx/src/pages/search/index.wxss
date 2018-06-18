@@ -26,9 +26,12 @@
 .tag{
   padding: 2px 8px;
   margin: 5px;
+  white-space :nowrap;
   display: block;
   text-align:center;
-  font-size: 13px;
+  font-size: 12px;
+  max-width: 200px;
+  overflow: hidden;
   background:#CCCCCC;
   border-radius:8px;
 }

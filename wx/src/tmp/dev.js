@@ -6,5 +6,6 @@ function request(host,url) {
 }
 
 module.exports = {
-  request: request
+  request: request,
+  isTest:true
 }

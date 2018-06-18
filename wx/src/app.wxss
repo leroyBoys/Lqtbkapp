@@ -1,5 +1,6 @@
 @import "common/plugins/weui.wxss";
 @import "common/plugins/font.wxss";
+@import "common/plugins/grid.wxss";
 @import "common/templates/tip/tip.wxss";
 page{
   background: #f4f4f4;
@@ -16,4 +17,22 @@ page{
 
 .template{
   width: 100%;
+}
+
+.float_left{
+  float: left;
+}
+
+.float_right{
+  float: right;
+}
+.clearfix:after{
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    /* visibility: hidden; */
+}
+.line-fone{
+  text-decoration:line-through
 }
