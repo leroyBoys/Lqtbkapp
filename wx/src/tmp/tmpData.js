@@ -34,7 +34,7 @@ let cates = [
   }
 ];
 
-let ads = [{ src: "http://140.143.192.36:67/101.jpg", url: "" }, { src: "http://140.143.192.36:67/102.jpg", url: "" }] ;
+let ads = [{ src: "https://img.alicdn.com/tfs/TB1eWl9sH9YBuNjy0FgXXcxcXXa-190-140.gif", url: "" }, { src: "http://140.143.192.36:67/102.jpg", url: "" }] ;
 
 let showDatas = [{
   tempId: "tk_main_title", title: "1月抢购"

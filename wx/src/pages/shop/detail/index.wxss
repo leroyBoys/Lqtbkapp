@@ -1,0 +1,215 @@
+@import "../../../common/templates/shop/tuangou1.wxss";
+.container{
+  margin-bottom: 50px;
+}
+.images_contain image,.shop_deail_list image{
+  width: 100%;
+}
+.container .images_contain {
+  position: relative;
+}
+
+.container .images_panel {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  bottom: 10px;
+}
+
+.container .images_panel .float_left {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 圆角 */
+  border-radius: 0 30rpx 30rpx 0;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 9px;
+  text-align: center;
+}
+
+.container .images_panel .float_left .view {
+  line-height: 10px;
+}
+
+.container .title_container, .container .price_container {
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 3px;
+}
+
+.container .title_container .title {
+  align-items: baseline;
+  padding-right: 20px;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2; /** 显示的行数 **/
+  overflow: hidden; /** 隐藏超出的内容 **/
+  line-height: 15px;
+}
+
+.container .title_container .fenxiang {
+  padding: 5px;
+}
+
+.container .title_container .title .icon {
+  color: red;
+  vertical-align: 0;
+}
+
+.container .price_container .float_left {
+  line-height: 20px;
+  justify-content: center;
+}
+
+.container .price_container .price {
+  color: red;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.container .price_container .old_price {
+  font-size: 12px;
+}
+
+.container .price_container .float_right {
+  color: #686868;
+  font-size: 12px;
+}
+
+.container .price_container .float_right .sales {
+  margin-right: 10px;
+}
+
+.container  .shop_space {
+  background-color: #ffe4e1;
+  width: 100%;
+  height: 6px;
+}
+
+.juan_container, .pingjia {
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  font-size: 12px;
+
+}
+
+.juan_container .juan_text {
+  margin-right: 10px;
+  color: #686868;
+}
+
+.juan_container .juan_list {
+  font-size: 12px;
+  font-weight: 590;
+}
+
+.pingjia .float_right {
+  color: #686868;
+}
+
+.shop_space.hr {
+  height: 1px;
+  margin-bottom: 5px;
+  background-color: none;
+  border-bottom: 1px dotted #ffe4c4;
+}
+
+.pingjiang_view {
+  width: 100%;
+  display: flex;
+  background: #fff;
+  white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.pingjiang_view .pingjia {
+  display: inline-block;
+  background-color: #ffe4e1;
+  padding: 6px 10px;
+  margin:3px 5px;
+  width: 120px;
+  height: 50px;
+}
+
+.pingjia .head {
+  align-items: center;
+  font-size: 10px;
+}
+
+.pingjia .head .head-image {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #f2f2f2;
+  margin-right: 5px;
+}
+
+.pingjia .head view {
+  max-width: 95px;
+  overflow: hidden; /** 隐藏超出的内容 **/
+}
+
+.pingjia .content {
+  margin-top: 3px;
+  font-size: 10px;
+  word-break: break-all;
+  white-space: normal;
+  text-overflow: ellipsis;
+    line-height: 12px;
+  color: #686868;
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2; /** 显示的行数 **/
+  overflow: hidden; /** 隐藏超出的内容 **/
+}
+
+
+
+.recommend_hot_more {
+display: inline-block;
+  width: 50px;
+  height: 50px;
+  color: #686868;
+  font-size: 11px;
+  border-radius: 50%;
+  border: 1px solid #ffe4c4;
+  overflow: hidden;
+  line-height: 50px;
+   text-align: center; /*设置文本水平居中*/
+}
+
+.shop_deail_list{
+  text-align: center
+}
+
+
+.goods_bottom_btn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 40px;
+  z-index: 99;
+  background-color: #FFF;
+  border-top: 1px solid #E5E5E5;
+}
+.goods_bottom_btn .container{
+    display: flex;
+    width: 100%;
+}
+
+.lingquangoumai {
+  height: 35px;
+  font-size: 12px;
+  line-height: 35px;
+  text-align: center;
+  background: #69C3AA;
+  color: #FFF;
+}
+
+.shoucang{
+  text-align: center;
+}
+.shoucang .icon{
+    font-size: 25px;
+}

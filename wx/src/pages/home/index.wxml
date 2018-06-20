@@ -1,34 +1,20 @@
-<view class='miaosha_container'>
 
-<view class='desc clearfix'>
-    <view class='float_left'>
-      限量先到先得
-    </view>
-      <view class='float_right'>
-      距离本场结束 {{countDownTime}}
-    </view>
-</view>
 
-<scroll-view scroll-x="true" scroll-with-animation="true" scroll-into-view="time{{timeindex}}" class='miaosha'>
-
-  <block wx:for="{{timeZones}}">
-      <view id="time{{index}}" bindtap="choiceTime" data-value='{{index}}'  class='time {{index==userchoiceIdex?"active":""}}'>
-        <view class='top'>
-      {{item}}
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="info_list">
+    <block wx:for="{{userListInfo}}" wx:key="{{item.idex}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <view class="with_arrow"></view>
         </view>
-        <view class='bottom'> 
-            <block wx:if="{{index<timeindex}}">已结束</block >
-            <block wx:elif="{{index==timeindex}}">进行中</block >
-             <block wx:else> 即将开始</block >
-        </view>
-    </view>
-  </block>
-</scroll-view >
-
-
-
-<view class='container'>
-
+    </block>
+  </view>
 </view>
-</view>
-

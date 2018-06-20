@@ -1,12 +1,15 @@
 {
   "pages": [
-    "pages/home/index",
-    
-      "pages/index/index",
+ 
+    "pages/index/index",
     "pages/shop/search/index",
     "pages/shop/miaosha/index",
+    "pages/shop/detail/index",
+    "pages/shop/cates/index",
+      "pages/login/login",
     "pages/search/index",
     "pages/images/index",
+    "pages/home/index",
     "activity/choujiang/index"
   ],
   "window": {

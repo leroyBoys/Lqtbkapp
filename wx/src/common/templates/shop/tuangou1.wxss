@@ -195,15 +195,6 @@
        text-overflow: ellipsis;
 }
 
-
-
-.goods-item3{
-
-   box-sizing: border-box;
-  border: 1px solid #d1d3d4;
-  border-radius: 6px;
-  margin: 0 5px 5px 5px;
-}
 .goods-item3, .shop-image {
   width: 100%;
 }
@@ -290,4 +281,19 @@
 }
 .goods-item3 .foot .icon{
   display:inline-flex;
+}
+
+
+
+
+.goods-item .foot{
+  padding: 3px 10px;
+  justify-content:center;
+  align-items: center
+}
+
+.goods-item .foot .curprice{
+  color: red;
+  font-size: 18px;
+  margin-right: 5px;
 }

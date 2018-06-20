@@ -1,0 +1,172 @@
+<include src="../../../common/templates/templates.wxml" />
+<view class='container'>
+
+  <view class='images_contain'>
+    <view class='images_panel clearfix'>
+      <view class='float_left'>
+        <view>
+          距离结束
+        </view>
+        <view>
+          11小时40分钟
+        </view>
+      </view>
+      <view class='float_right'>
+      </view>
+    </view>
+    <swiper autoplay="true" indicator-dots="true">
+      <swiper-item>
+        <image src="http://140.143.192.36:67/102.jpg" class="ad-swiper" mode='widthFix' bindtap='clickLink' data-url='{{item.url}}' />
+      </swiper-item>
+      <swiper-item>
+        <image src="http://140.143.192.36:67/103.jpg" class="ad-swiper" mode='widthFix' bindtap='clickLink' data-url='{{item.url}}' />
+      </swiper-item>
+      <swiper-item>
+        <image src="http://140.143.192.36:67/101.jpg" class="ad-swiper" mode='widthFix' bindtap='clickLink' data-url='{{item.url}}' />
+      </swiper-item>
+    </swiper>
+  </view>
+
+
+  <view class='title_container weui-flex'>
+
+    <view class='title weui-flex'>
+      <icon class='iconfont icon-tao icon' />
+      <icon class='iconfont icon-mao icon' />s有点奢望总比没有理想的好s有点奢望总比没有理想的好s有点奢望总比没有理想的好
+    </view>
+    <view class='fenxiang'>
+      <icon class='iconfont icon-fenxiang icon' />
+    </view>
+  </view>
+
+  <view class='price_container clearfix'>
+    <view class='float_left weui-flex'>
+      ￥
+      <view class='price'>
+        99.9
+      </view>
+
+      <view class='line-fone old_price'>
+        899.9
+      </view>
+    </view>
+
+    <view class='float_right weui-flex'>
+      <view class='sales'>
+        月销量20000
+      </view>
+      <view>
+        北京 上海
+      </view>
+    </view>
+  </view>
+
+  <view class='shop_space'></view>
+  <view class='juan_container clearfix'>
+    <view class='juan_text float_left'>
+      领券
+    </view>
+
+    <view class='juan_list float_left'>
+      <view>满30 减10</view>
+      <view>满30 减10</view>
+    </view>
+  </view>
+
+  <view class='shop_space'></view>
+
+  <view class='pingjia clearfix'>
+    <view class='float_left'>
+      口碑精选
+    </view>
+    <view class='float_right'>
+      查看全部
+    </view>
+  </view>
+
+  <view class='shop_space hr'></view>
+
+
+  <scroll-view scroll-x="true" class='pingjiang_view'>
+   <block wx:for="1,1,2">
+
+
+        <view class='pingjia'>
+
+          <view class='head weui-flex'>
+            <image  class='head-image' src="http://140.143.192.36:67/101.jpg"></image>
+            <view>
+              这ANGS     sssssssssssssssssssssss    这ANGS
+            </view>
+          </view>
+
+          <view class='content'>
+            aaaaa第三方的方式地方 三方的方式地方 三方的方式地方三方的方式地方 三方的方式地方 三方的方式地方三方的方式地方 三方的方式地方 三方的方式地方三方的方式地方 三方的方式地方 三方的方式地方 三方的方式地方
+          </view>
+        </view>
+
+
+      </block>
+
+        <view bindtap='clickLink' class="recommend_hot_more" data-url='{{mainurl}}'>查看更多</view>
+  </scroll-view>
+
+  <view class='shop_space'></view>
+
+
+ <view class='pingjia clearfix'>
+    <view class='float_left'>
+      商品详情
+    </view>
+  </view>
+  <view class='shop_space hr'></view>
+  
+    <view class='shop_deail_list'>
+    
+     <image src="http://140.143.192.36:67/103.jpg" mode='widthFix'bindtap='clickLink' data-url='{{item.url}}' />
+    <image src="http://140.143.192.36:67/103.jpg" mode='widthFix' bindtap='clickLink' data-url='{{item.url}}' />
+   <image src="http://140.143.192.36:67/103.jpg" mode='widthFix' bindtap='clickLink' data-url='{{item.url}}' />
+
+    </view>
+    
+
+  
+  <view class='shop_space'></view>
+
+ <view class='pingjia clearfix'>
+    <view class='float_left'>
+    为你推荐
+    </view>
+  </view>
+  <view class='shop_space hr'></view>
+     
+
+<view class='row'>
+<view class='col-4'>
+ <template is="tk-shop-3" />
+
+</view>
+<view class='col-4'>
+ <template is="tk-shop-3" />
+
+</view>
+<view class='col-4'>
+ <template is="tk-shop-3" />
+
+</view>
+
+
+</view>
+
+
+
+
+
+</view>
+
+<view class="goods_bottom_btn">
+  <view class='container'>
+    <view class="shoucang col-4"> <icon class='iconfont icon-shoucangxuanzhong icon' /></view>
+    <view class="lingquangoumai col-8">领券购买</view>
+  </view>
+</view>

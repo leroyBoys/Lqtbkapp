@@ -59,7 +59,12 @@ Page({
   onReady: function () {
   
   },
+  todetail :function(){
+    wx.redirectTo({
+      url: '/pages/shop/detail/index',
+    })
 
+  },
   /**
    * 生命周期函数--监听页面显示
    */

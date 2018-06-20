@@ -52,12 +52,12 @@
     </view>
     <view class='foot weui-flex'>
       <view class='left placeholder'> 
-          <view><text class="oldprice" class="line-font">9998</text><text class='curprice'>￥88</text></view>
+          <view><text class="oldprice" class="line-fone">9998</text><text class='curprice'>￥88</text></view>
           <view>已售:4444ssss</view>
       </view>
       <view class='right weui-flex'>
         <view class='button'>
-            去团购
+            去抢购
         </view>
 
       </view>
@@ -196,3 +196,24 @@
 
  </view>
 </template>
+
+
+
+
+
+ <template name="tk-shop-3">
+<view class="goods-item">
+  <view class="goods" bindtap='todetail'>
+    <view class="goods-tag ten" />
+    <image mode='widthFix' class="goods-image" src="http://res.126.net/p/dbqb/one/168/1168/6abc05894e903b9749166c224d739838.png" />
+    <view class="desc-wrapper max-two-line">
+      <view class="goods-desc">Apple Watch Sport 38毫 Sport 38毫米 铝金属表 Sport 38毫米 铝金属表 Sport 38毫米 铝金属表米 铝金属表壳 运动表带</view>
+    </view>
+  </view>
+  <view class='foot weui-flex'>
+     <text class='curprice'>￥88</text>
+     <text class="oldprice" class="line-fone">9998</text>
+     
+  </view>
+</view>
+ </template>

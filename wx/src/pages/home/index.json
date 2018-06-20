@@ -1,5 +1,6 @@
 {
-"disableScroll": true,
-"navigationBarTitleText":"整点秒杀",
-"enablePullDownRefresh":false
+  "navigationBarTitleText": "我的小窝",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#339933",
+  "enablePullDownRefresh": false
 }
