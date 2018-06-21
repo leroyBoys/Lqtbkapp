@@ -1,0 +1,41 @@
+<view class="hr"></view>
+
+
+<view class="address_container">
+  <view class='weui-flex top'>
+    <view class='name font-line'>的说法答复</view>
+    <view class='phone font-line'>135xxx252</view>
+  </view>
+  <view class='max-two-line address font-line'>
+    全宇宙中华民族北京市昌平区xx  全宇宙中华民族北京市昌平区xx  全宇宙中华民族北京市昌平区xx  全宇宙中华民族北京市昌平区xx
+  </view>
+  <view class='clearfix foot'>
+    <view class='float_left font-line'>的说法答复</view>
+    <view class='float_right font-line'  bindtap='editor'>编辑</view>
+
+  </view>
+
+</view>
+
+
+<view class="address_container">
+  <view class='weui-flex top'>
+    <view class='name font-line'>的说法答复</view>
+    <view class='phone font-line'>55xxx5</view>
+  </view>
+  <view class='max-two-line address font-line'>
+    全宇宙中华民族北京市昌平区xx  全宇宙中华民族北京市昌平区xx  全宇宙中华民族北京市昌平区xx  全宇宙中华民族北京市昌平区xx
+  </view>
+  <view class='clearfix foot'>
+    <view class='float_left font-line'>的说法答复</view>
+    <view class='float_right font-line' bindtap='editor'>编辑</view>
+
+  </view>
+
+</view>
+
+
+<view class='button_container weui-flex'>
+  <view class='button' bindtap='clickRedirectTo' data-url='/pages/user/address/editor'>新增地址</view>
+<view class='button' ><icon class='iconfont .icon-weixin icon'/>微信添加</view>
+</view>

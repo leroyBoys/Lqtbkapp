@@ -217,16 +217,16 @@ function _clickNavigateTo(url) {
 
 /** 根据当前页面设置是否保留跳转 */
 function clickLink(e){
-  let url = e.target.dataset ?e.target.dataset.url:null;
+  let url = e.currentTarget.dataset ? e.currentTarget.dataset.url:null;
   if (!url){
     console.warn("未设置 data-url");
     return
   }
-  let systeConfig = wx.curPage.systemConfig;
+  /**let systeConfig = wx.curPage.systemConfig;
   if (!systeConfig || !systeConfig.isSave){
     _clickRedirectTo(url);
     return
-  }
+  }**/
   _clickNavigateTo(url);
 }
 
@@ -392,6 +392,7 @@ module.exports = {
   bindToggleAttr,
   bindchange,
   countDownTime,
-  countDownDate
+  countDownDate,
+  clickRedirectTo
   
 }

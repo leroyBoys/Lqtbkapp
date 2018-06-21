@@ -2,20 +2,30 @@
 
 .userinfo {
   display: flex;
-  flex-direction: column;
-  padding: 70rpx 0;
-  align-items: center;
-  background: #339933;
+  padding: 70rpx 30px;
+  justify-content:space-between;
+  font-size: 11px;
+ background: #339933;  /**/
 }
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
   border-radius: 50%;
 }
 .userinfo-nickname {
   color: #333;
+  font-size: 16px;
 }
+.pic>view{
+  padding: 0 8px;
+  text-align: center;
+}
+
+.operate{
+  line-height: 54px;
+}
+
+
 .weui_cell{
     position: relative;
     display: flex;

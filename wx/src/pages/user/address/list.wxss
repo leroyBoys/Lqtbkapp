@@ -1,0 +1,41 @@
+.hr{
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+
+.address_container{
+  margin: 0 8px;
+  padding: 6px 2px;
+  border-bottom: 1px solid #CCC;
+}
+.address_container > view{
+  margin-bottom: 5px;
+}
+
+.font-line{
+  line-height: 15px;
+  color: #686868;
+}
+.address_container .top view{
+      color: #000;
+      font-size: 14px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.address_container .top .name{
+  margin-right: 10px;
+
+}
+
+.button_container{
+  margin-top: 20px;
+  justify-content:space-around;
+}
+.button_container .button{
+  text-align: center;
+  padding: 5px 0;
+  line-height: 30px;
+  width: 45%;
+  border: 1px solid gray;
+}

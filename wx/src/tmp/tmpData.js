@@ -109,30 +109,23 @@ module.exports = {
 
 
 
-data[key("my")] = [{
-  icon: icon("iconfont-dingdan.png"),
-  text: "我的订单",
-  isunread: true,
-  unreadNum: 2
-}, {
-  icon: icon("iconfont-card.png"),
-  text: "我的代金券",
-  isunread: false,
-  unreadNum: 2
-}, {
-  icon: icon("iconfont-icontuan.png"),
+data["my"] = [ {
+  icon: icon("icon-aaa"),
   text: "我的拼团",
   isunread: true,
   unreadNum: 1
 }, {
-  icon: icon("iconfont-shouhuodizhi.png"),
+    icon: icon("icon-shouhuodizhi"),
   text: "收货地址管理"
 }, {
-  icon: icon("iconfont-kefu.png"),
+    icon: icon("icon-iconfontfuwushichang"),
   text: "联系客服"
 }, {
-  icon: icon("iconfont-help.png"),
+    icon: icon("icon-help"),
   text: "常见问题"
+}, {
+    icon: icon("icon-set"),
+  text: "系统设置"
 }];
 
 data[key("detail1")] = {
