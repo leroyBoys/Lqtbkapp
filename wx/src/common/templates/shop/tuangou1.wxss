@@ -2,20 +2,24 @@
 .goods-panel .shopdiv{
     width: 50%;
     box-sizing: border-box;
-    border-bottom:1px solid #e8e8e8;
+    border-bottom:1px solid #DCDCDC;
 }
 .goods-panel{
     display: flex;
     flex-wrap:wrap;
 }
 
-.shopdiv,.shopdiv.odd{
+.shopdiv,.shopdiv.odd,.shopdiv.odd2{
     box-sizing: border-box;
 }
 
 .shopdiv.odd{
-    border-right:1px solid #e8e8e8;
+    border-right:1px solid #DCDCDC;
 }
+.shopdiv.odd2{
+    border-right:1px solid #CCCCCC;
+}
+
 .goods-item .goods{
     position: relative;
 }
@@ -185,10 +189,11 @@
 
 .goods-item2 .foot .price{
   color: #FF4500;
+   font-size: 14px;
   margin-right: 10px;
 }
 .goods-item2 .foot .provice{
-  width: 40px;
+  width: 25px;
    margin-left: 10px;
      overflow: hidden; /** 隐藏超出的内容 **/
      word-break:keep-all;

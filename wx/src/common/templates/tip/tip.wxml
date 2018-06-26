@@ -8,3 +8,11 @@
   </view>
 </template>
 
+
+<template name="tk-flytop-tip">
+ <view class="notice_module flytop" wx:if="{{msg}}">
+    <view class="shownotice_module">
+        <view class="text ">{{msg}}</view>
+    </view>
+  </view>
+  </template>

@@ -56,7 +56,7 @@ Page({
     console.log(e);
     console.log(app.globalData)
     if (!e.detail.userInfo) {
-      wx.alert("授权失败！error：" + e.detail.errMsg);
+      wx.myapp.alert("授权失败！error：" + e.detail.errMsg);
       return;
     }
     app.globalData.userInfo = e.detail.userInfo;
@@ -70,6 +70,11 @@ Page({
     });
   },
 
+  changeOtherLogin:function(){
+    wx.redirectTo({
+      url: '/pages/login/otherlogin?fromURL=' + this.data.fromURL,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -3,9 +3,11 @@
   
   <include src="../../common/templates/header/header.wxml"/>
  <!-- 轮播图 start -->
-    <template is="tk_ad_swiper" data="{{datas:ads}}"></template>
+    <template is="tk_ad_swiper" data="{{height:'360',datas:ads}}"></template>
 
   <!-- 轮播图 end -->
+
+
 
 <!--推荐分类列表-->
     <view class="cates">
@@ -17,8 +19,14 @@
       </block>
     </view>
 
-<!--推荐分类列表
--->
+
+
+<!--推荐分类列表-->
+<!-- 秒杀 -->
+<block wx:if="{{miaosha}}">
+  <template is="tk_main_miaosha" data="{{...miaosha}}"></template>
+</block>
+
 
 <block wx:key="this*" wx:for="{{showDatas}}">
     <template is="{{item.tempId}}" data="{{...item}}"></template>

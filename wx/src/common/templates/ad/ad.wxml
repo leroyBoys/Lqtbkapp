@@ -1,61 +1,80 @@
-  <!-- 循环广告 -->
-  <template name="tk_ad_swiper">
-    <swiper autoplay="true"  indicator-dots="true" wx:if="{{datas && datas.length>0}}" >
-          <block wx:for="{{datas}}" wx:key="this*">
-            <swiper-item >
-              <image src="{{item.src}}" class="ad-swiper" bindtap='clickLink' data-url='{{item.url}}'/>
-            </swiper-item>
-        </block>
-    </swiper>
-  </template>
+<import src="../shop/shop1.wxml" />
+
+
+
+<!-- 循环广告 -->
+<template name="tk_ad_swiper">
+  <swiper autoplay="true" class='ad-swiper' style='{{height?"height:"+height+"rpx":""}}' indicator-dots="true" wx:if="{{datas && datas.length>0}}">
+    <block wx:for="{{datas}}" wx:key="this*">
+      <swiper-item>
+        <image src="{{item.src}}" bindtap='clickLink' data-url='{{item.url}}' />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
 
 <!-- 不循环的或者单张海报的广告 -->
+<!--  有click -->
 <template name="tk_ad">
   <block wx:if="{{image}}">
-        <image  src="{{image.src}}" bindtap='clickLink' data-url="{{image.url}}" class="ad" />
-    </block>
-    <block wx:else="{{datas && datas.length>0}}" >
-      <image wx:for="{{datas}}" wx:key="this*" wx:for-item="image"  src="{{image.src}}" bindtap='clickLink' data-url="{{image.url}}" class="ad" />
-    </block>
+    <image src="{{image.src}}" style='width:100%'  mode='widthFix' bindtap='clickLink' data-url="{{image.url}}" />
+  </block>
+  <block wx:else="{{datas && datas.length>0}}">
+    <image wx:for="{{datas}}" style='width:100%'  mode='widthFix' wx:key="this*" wx:for-item="image" src="{{image.src}}" bindtap='clickLink' data-url="{{image.url}}" />
+  </block>
 </template>
+
+
+<template name="tk_ad_2">
+  <block wx:if="{{image}}">
+    <image src="{{image.src}}" bindtap='clickLink' data-url="{{image.url}}" class="ad" />
+  </block>
+  <block wx:else="{{datas && datas.length>0}}">
+    <image wx:for="{{datas}}" wx:key="this*" wx:for-item="image" src="{{image.src}}" bindtap='clickLink' data-url="{{image.url}}" class="ad" />
+  </block>
+</template>
+
+<!--  标题图片没有click -->
+<template name="tk_title_image">
+  <image src="{{src}}" style='width:100%' mode='widthFix' />
+</template>
+
 
 <!-- 广播 -->
 <template name="tk_channel">
-    <block wx:if="{{datas && datas.length > 0}}">
-              
-      <view class="notice">
-      <view class='lightbox'></view>
-  
-            <icon class="iconfont icon-laba" style='color:red;font-size:20px' ></icon>
-            <!-- <view class="notice-list">{{notices[0].title}}</view> -->
-            <view class="notice-list">
-                <swiper  vertical="true" autoplay="true" circular="true" interval="2000">
-                  <block wx:for="{{datas}}" wx:key="{{item}}">
-                    <navigator url="" open-type="navigate">
-                      <swiper-item>
-                        <view class="swiper_item">
-                          <text>{{item.title}}</text>
-                        </view>
-                      </swiper-item>
-                    </navigator>
-                  </block>
-                </swiper>
-            </view>
+  <block wx:if="{{datas && datas.length > 0}}">
 
-        </view> 
-     
-    </block>
+    <view class="notice ">
+    <view bindtap='clickNotice' class='lightbox'></view>
+
+      <icon class="iconfont icon-laba"></icon>
+      <!-- <view class="notice-list">{{notices[0].title}}</view> -->
+      <view class="notice-list">
+        <swiper vertical="true" bindchange="noticeChange" autoplay="true" circular="true" interval="2000">
+          <block wx:for="{{datas}}" wx:key="{{item}}">
+            <swiper-item item-id="{{item.url}}">
+              <view class="swiper_item" data-url="11{{item.title}}">
+                <text>{{item.title}}</text>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+
+    </view>
+
+  </block>
 </template>
 
 
 <template name="tk_main_title">
-    <block wx:if="{{title}}">
-        <view class="title_center">
-            <image wx:if="{{icon_first}}" class="icon" src="{{icon_first}}"/>
-            <text>{{title}}</text>
-            <image wx:if="{{icon_second}}" class="icon" src="{{icon_second}}"/>
-        </view>
-      </block>
+  <block wx:if="{{title}}">
+    <view class="title_center">
+      <image wx:if="{{icon_first}}" class="icon" src="{{icon_first}}" />
+      <text>{{title}}</text>
+      <image wx:if="{{icon_second}}" class="icon" src="{{icon_second}}" />
+    </view>
+  </block>
 </template>
 
 
@@ -64,53 +83,155 @@
 <template name="tk_main_1_circle">
 
   <view class="template_main_1_circle ad_list">
-     
-        <view wx:if="{{head}}" class="head">
-          <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
-        </view>
 
-       <scroll-view  scroll-x="true" class="recommend_scroll_x_box">
-          <block  wx:for="{{items}}" wx:key="this*">
-          
-           <view class="recommend_hot_box recommend_hot_box_color">
-            <image src="{{item.src}}" bindtap='clickLink' data-url="{{item.url}}" class="recommend_hot_image"></image>
-          </view>
+    <view wx:if="{{head}}" class="head">
+      <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
+    </view>
 
-          </block>
-            <view class="recommend_hot_box">
-              <view class="recommend_hot_button">
-               <view bindtap='clickLink' class="recommend_hot_more" data-url='{{mainurl}}'>查看更多</view>
-              </view>
-          </view>
-        </scroll-view>
+    <scroll-view scroll-x="true" class="scroll_x recommend_scroll_x_box">
+      <block wx:for="{{items}}" wx:key="this*">
+
+
+        <image src="{{item.src}}" bindtap='clickLink' data-url="{{item.url}}" class="recommend_hot_image"></image>
+
+      </block>
+      <view bindtap='clickLink' class="recommend_hot_more" data-url='{{mainurl}}'>更多</view>
+    </scroll-view>
   </view>
 
 
 
 </template>
-  
 
-  
+
+
 <!-- tk_main_1_list -->
 
 <template name="tk_main_1_list">
 
   <view class="template_main_1_list ad_list">
-        <view wx:if="{{head}}" class="head">
-          <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
+    <view wx:if="{{head}}" class="head">
+      <image src="{{head.src}}" bindtap='clickLink' data-url="{{head.url}}" />
+    </view>
+
+    <view class="venues_box">
+      <view class="venues_list">
+        <block wx:for="{{items}}" wx:key="{{item}}">
+          <view class="venues_item  {{index%2==0?'':'venues_item_second'}}">
+            <navigator url="{{item.url}}">
+              <image src="{{item.src}}" />
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+</template>
+
+
+
+<template name="tk_main_2_list">
+  <view class='div marget_div'>
+    <view class='title head clearfix'>
+      <view class='float_left ad_title'>
+        最热世界杯
+      </view>
+      <view class='float_right more_font'>
+        查看更多
+      </view>
+    </view>
+
+    <scroll-view scroll-x="true" class="scroll_x row">
+
+      <block wx:for="sdfsdfsdfsdfs">
+        <view class='scroll_x_item  col-4'>
+
+          <template is="line_three_shop_1" data="{{...item}}" />
+        </view>
+      </block>
+
+    </scroll-view>
+
+  </view>
+
+
+</template>
+
+
+
+
+
+
+
+
+<template name="tk_main_miaosha">
+
+  <view class='line_show_3_1 row marget_div'>
+    <view class='left div' bindtap='clickLink' data-url="/pages/shop/miaosha/index">
+      <view class="title_div">
+        <text class='title single_line'>极限秒杀</text>
+        <view class='title2 weui-flex'>
+
+          <text>{{desc}}场</text>
+          <view class='time'>{{time?time[0]:'00'}}</view>
+          <view class='time'>{{time?time[1]:'00'}}</view>
+          <view class='time'>{{time?time[2]:'00'}}</view>
         </view>
 
-        <view class="venues_box">
-                <view class="venues_list">
-                    <block wx:for="{{items}}" wx:key="{{item}}">
-                        <view class="venues_item  {{index%2==0?'':'venues_item_second'}}">
-                            <navigator url="{{item.url}}">
-                                <image src="{{item.src}}"/>
-                            </navigator>
-                        </view>
-                    </block>
-                </view>
+      </view>
+
+      <view class='images weui-flex'>
+
+        <block wx:for="123">
+
+          <view class='image' bindtap='clickLink' data-url="/pages/shop/miaosha/index">
+            <image mode="widthFix" src='https://img.alicdn.com/imgextra/i2/165/TB2e0x7X138SeJjSZFPXXc_vFXa_!!165-2-luban.png_120x120q90.jpg_.webp'></image>
+
+            <view class='price_container'>
+              <view class='price_old line-fone'>
+                99.00
+              </view>
+              <view class='price'>
+                19.2
+              </view>
+
             </view>
-              
+          </view>
+
+        </block>
+
+
+
+      </view>
+
+
+    </view>
+
+    <view class='second div'>
+      <view class="title_div">
+        <text class='title single_line'>热门推荐</text>
+        <text class='title2 single_line'>大家的选择</text>
+      </view>
+
+      <view class='image'>
+        <image mode="aspectFit" src='https://img.alicdn.com/imgextra/i2/165/TB2e0x7X138SeJjSZFPXXc_vFXa_!!165-2-luban.png_120x120q90.jpg_.webp'></image>
+      </view>
+
+
+    </view>
+
+    <view class='second div'>
+      <view class="title_div">
+        <text class='title single_line'>热门推荐</text>
+        <text class='title2 single_line'>大家的选择</text>
+      </view>
+
+      <view class='image'>
+        <image mode="aspectFit" src='https://img.alicdn.com/imgextra/i2/165/TB2e0x7X138SeJjSZFPXXc_vFXa_!!165-2-luban.png_120x120q90.jpg_.webp'></image>
+      </view>
+
+
+    </view>
   </view>
 </template>

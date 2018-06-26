@@ -82,14 +82,15 @@
 }
 
 .container  .shop_space {
-  background-color: #ffe4e1;
+  background-color: #DCDCDC;
   width: 100%;
   height: 6px;
 }
-
-.juan_container, .pingjia {
+.juan_container{
+  background-color:#ddeeff
+}
+.juan_container, .title_heade {
   padding: 5px 10px;
-  margin-bottom: 3px;
   font-size: 12px;
 
 }
@@ -104,7 +105,7 @@
   font-weight: 590;
 }
 
-.pingjia .float_right {
+.title_heade .float_right {
   color: #686868;
 }
 
@@ -112,24 +113,23 @@
   height: 1px;
   margin-bottom: 5px;
   background-color: none;
-  border-bottom: 1px dotted #ffe4c4;
+  border-bottom: 1px dotted #DCDCDC;
 }
 
 .pingjiang_view {
   width: 100%;
   display: flex;
-  background: #fff;
   white-space: nowrap;
     box-sizing: border-box;
 }
 
-.pingjiang_view .pingjia {
+.pingjia {
   display: inline-block;
-  background-color: #ffe4e1;
+  background-color: #DCDCDC;
   padding: 6px 10px;
-  margin:3px 5px;
+  margin:3px 5px 8px 5px;
   width: 120px;
-  height: 50px;
+  height: 50px; 
 }
 
 .pingjia .head {
@@ -141,7 +141,6 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid #f2f2f2;
   margin-right: 5px;
 }
 
@@ -173,7 +172,7 @@ display: inline-block;
   color: #686868;
   font-size: 11px;
   border-radius: 50%;
-  border: 1px solid #ffe4c4;
+  border: 1px solid #DCDCDC;
   overflow: hidden;
   line-height: 50px;
    text-align: center; /*设置文本水平居中*/

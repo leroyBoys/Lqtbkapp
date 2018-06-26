@@ -1,0 +1,37 @@
+<view class='loading'>
+加载中...
+</view>
+
+
+<scroll-view class="scroll-container"  bindscroll="bindscroll" bindscrolltolower="bindscrolltolower" scroll-y="true">
+<block wx:for="22222" wx:item="this">
+
+
+    <view class='pingjia'>
+
+          <view class='head clearfix'>
+            <image  class='head-image float_left' src="http://140.143.192.36:67/101.jpg"></image>
+            <view class='float_left'>
+              这ANGS 这ANGS
+            </view>
+            <view class='time float_right'>
+            2017:10:10
+            </view>
+          </view>
+
+          <view class='content'>
+            aaaaa第三方的方式地方 三方的方式地方 三方的方式地方三方的方式地方 三方的方式地方 三方的方式地方三方的方式地方 三方的方式地方 三方的方式地方三方的方式地方 三方的方式地方 三方的方式地方 三方的方式地方
+          </view>
+        </view>
+
+
+
+
+
+
+
+        </block>
+
+
+
+ </scroll-view>

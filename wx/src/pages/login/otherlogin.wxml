@@ -1,0 +1,30 @@
+<include src="../../common/templates/templates.wxml"/>
+<form bindsubmit="login">
+
+<view class='container'>
+
+
+
+<view class='head'>
+    <image src='../../tmp/images/hui.png' mode='widthFix'>
+    </image>
+
+</view>
+
+<view class='input weui-flex'>
+ <icon class='iconfont icon-yonghu'  />
+  <input name="name" class="input_text"   placeholder="用户名/手机号" placeholder-class="input_text" />
+</view>
+
+
+<view class='input weui-flex'>
+ <icon class='iconfont icon-mimaicon'/>
+  <input name="password"  class="input_text"  type='password' placeholder="用户名/手机号" placeholder-class="input_text" />
+</view>
+
+<view class='input button'>
+<button form-type="submit" plain='true'>登录</button>
+</view>
+
+</view>
+</form>

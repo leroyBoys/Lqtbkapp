@@ -1,4 +1,5 @@
- 
+
+
  <template name="tk-tuangou-1">
  <view class="goods-item">
             <view class="goods" bindtap='todetail'>
@@ -41,7 +42,7 @@
   <image mode='widthFix' class="goods-image" src="http://res.126.net/p/dbqb/one/168/1168/6abc05894e903b9749166c224d739838.png" />
 
   <view class='content'>
-    <view class='title weui-flex'>
+    <view class='title weui-flex'  bindtap='todetail'>
      <icon class='iconfont icon-tao icon'/> <icon class='iconfont icon-mao icon'/>
     哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上    哈哈哈啥时候订婚沙发上
     </view>
@@ -86,7 +87,7 @@
 
 
  <template name="tk-shop-1">
-<view class='goods-item2 weui-flex'>
+<view class='goods-item2 weui-flex'  bindtap='todetail'>
   <image mode='widthFix' class="goods-image" src="http://res.126.net/p/dbqb/one/168/1168/6abc05894e903b9749166c224d739838.png" />
 
   <view class='content'>
@@ -100,7 +101,7 @@
       </view>
     </view>
     <view class='foot weui-flex'>
-          <view class='price'>￥83</view>
+          <view class='price'>￥832</view>
           <view class='xiaoliang'>10000人付款</view>
               <view class='provice'>郑州</view>
      </view>
@@ -127,7 +128,7 @@
 
 
  <template name="tk-shop-2">
-<view class="goods-item3">
+<view class="goods-item3"  bindtap='todetail'>
   <view class='shop-image'>
 
           <view class='icon'>
@@ -143,7 +144,7 @@
   </view>
 
     <view class='content'>
-        <view class='head line clearfix'>
+        <view class='head line clearfix'  bindtap='todetail'>
             <view class='float_left weui-flex'>
             ￥
                <view class='curprice'>
@@ -187,7 +188,7 @@
 <template name="tk-shop-list-2">
  <view class='goods-panel'>
   <block wx:for="{{goods}}" wx:key="this*">
-           <view class="shopdiv {{index % 2 == 0?' odd':''}}">
+           <view class="shopdiv {{index % 2 == 0?' odd2':''}}">
       <template is="tk-shop-2" data="{{...item}}"/>
       </view>
 

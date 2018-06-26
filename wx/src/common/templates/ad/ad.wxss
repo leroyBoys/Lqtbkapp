@@ -5,23 +5,26 @@
   margin: 0;
   display: block;
 }
-
+.ad-swiper image{
+  width: 100%;
+  height: 100%;
+}
 .ad{
    height:300rpx;
+   width: 100%;
 }
 
 .notice{
-  height: 80rpx;
+
   width: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   padding: 0 20rpx;
   box-sizing: border-box;
-  margin-bottom: 20rpx;
   color: #000;
   font-size: 15px;
   position:relative; 
+      line-height: 24px;
 }
 
 .lightbox{
@@ -34,15 +37,14 @@
 	 }
 
 .notice-list {
-  width: 80%;
-  margin-left: 20rpx;
-  border-left: 1px solid #f4f4f4;
-  margin-top: 4px;
+ margin-left: 20rpx;
   padding-left: 20rpx;
+  width: 100%;
 }
 
 .notice-list,.notice-list swiper,.swiper_item{
-   height:  32px;
+height: 24px;
+ line-height: 24px;
 }
 
 .notice-list .swiper_item {
@@ -50,7 +52,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 /** tk_main_1_circle   */ 
 .template_main_1_circle{
   width: 100%;
@@ -88,58 +89,34 @@
   display: block;
 }
 
-.recommend_hot_box_color{
-  background-color: #fff;
-}
-
 .recommend_scroll_x_box {
-  padding: 5px;
-  background-color: #FF99FF;
-  box-sizing: border-box;
-  height: 285rpx;
-  width: 100%;
-  white-space: nowrap;
-  display: flex;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  color: transparent;
-}
-
-.recommend_hot_box {
-  width: 188rpx;
-  height: 285rpx;
-  margin-right: 5px;
-  display: inline-block;
-  box-sizing: border-box;
+  padding: 5px 0 2px 2px;
 }
 
 .recommend_hot_image {
-  width: 100%;
-  height: 100%;
-}
-
-.recommend_hot_button {
   width: 188rpx;
-  height: 285rpx;
-  display: table-cell;
-  vertical-align: middle;
+    height: 50px;
+  display: inline-block;
+}
+.recommend_hot_image,.recommend_hot_more{
+  margin-right: 5px;
+
+}
+.recommend_hot_more {
+
+display: inline-block;
+  width: 45px;
+    height: 45px;
+  color: #686868;
+  font-size: 11px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid #ADD8E6;
+  overflow: hidden;
+  line-height: 45px;
+   text-align: center; /*设置文本水平居中*/
 }
 
-.recommend_hot_more {
-  line-height: 150rpx;
-  text-align: center;
-  margin: auto;
-  width: 150rpx;
-  height: 150rpx;
-  color: #eee;
-  font-size: 12px;
-  border-radius: 50%;
-  border: 1px solid #eee;
-  overflow: hidden;
-}
 
 /** tk_main_1_list   */ 
 .template_main_1_list{
@@ -161,4 +138,92 @@
 .venues_item image{
     width: 100%;
     height: 90px;
+}
+.div .title.head{
+  padding: 5px 10px 10px  10px;
+}
+
+
+/** 秒杀**/
+.line_show_3_1{
+  margin-top: 10px;
+  border: 1px solid #DCDCDC;
+}
+
+.line_show_3_1 .title{
+  font-weight: bolder;
+}
+.line_show_3_1 .title_div{
+  line-height: 16px;
+  margin-bottom: 2px;
+}
+
+.line_show_3_1 .title2{
+  font-size: 11px;
+    color: gray;
+}
+
+.line_show_3_1 .div{
+  padding: 10px 5px;
+  box-sizing: border-box;
+  width: 24%;
+  text-align: center;
+
+}
+.left .title_div{
+  text-align: left;
+}
+
+.line_show_3_1  .image{
+  height: 110rpx;
+    position: relative;
+}
+.line_show_3_1  image{
+  width: 100%;
+  height:100%;
+}
+.line_show_3_1 .left{
+  width: 52%;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+
+.line_show_3_1 .second{
+ border-left: 1px solid #DCDCDC
+}
+.left .images{
+  justify-content:space-between ;
+}
+.line_show_3_1 .left text{
+  margin-right: 5px;
+}
+.line_show_3_1 .time{
+  padding: 0 3px;
+  box-sizing: border-box;
+border: 1px solid #F5DEB3;
+  margin-left: 2px;
+  color: red;
+}
+
+.price_container{
+  width: 100%;
+  background-color: rgba(255,255,255,0.4);
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  text-align: center;
+  font-size: 9px;
+  line-height: 10px;
+}
+
+.price_container .price{
+  color: red;
+}
+.left .image{
+  width: 40px;
+  height: 114rpx;
+}
+
+.marget_div{
+  margin:5px 0;
 }

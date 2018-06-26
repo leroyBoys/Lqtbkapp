@@ -1,12 +1,14 @@
 {
   "pages": [
-   
+
     "pages/index/index",
     "pages/shop/search/index",
     "pages/shop/miaosha/index",
-    "pages/shop/detail/index",
+  "pages/shop/detail/index",
     "pages/shop/cates/index",
     "pages/login/login",
+        "pages/shop/detail/pingjia",
+        "pages/login/otherlogin",
     "pages/search/index",
     "pages/images/index",
     "pages/user/editor",
@@ -39,8 +41,8 @@
       {
         "iconPath": "common/images/tabBar/tab_category_normal.png",
         "selectedIconPath": "common/images/tabBar/tab_category_selected.png",
-        "pagePath": "activity/choujiang/index",
-        "text": "抽奖"
+        "pagePath": "pages/shop/cates/index",
+        "text": "分类"
       },
       {
         "iconPath": "common/images/tabBar/tab_my_normal.png",

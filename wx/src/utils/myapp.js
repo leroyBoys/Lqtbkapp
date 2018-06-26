@@ -2,23 +2,38 @@ const cache = require("cache");
 const util = require("util");
 const json = require("json");
 const config = require("config");
+const countDown = require("./countDown.js");
 const functions = require("functions");
 const shop = require("server/shop");
 
 function init(app) {
   console.log("初始化 myapp:");
 
+
   //绑定alert
-  wx.myapp = Object.assign(util, cache, json,{
+  wx.myapp = Object.assign(util, cache, json, countDown,{
     ////服务器地址列表
     shop: shop
   });
 
   wx.myapp.initPage = initPage;
 }
+
+/**
+ * 页面展示（第一次初始化和后台切换回来都会触发）
+ */
+function pageShow(page){
+  if (page.hour_timer_register){
+    page.hour_timer_register();
+  }
+
+}
+
+
  function initPage(page, jspath) {
   console.log(page.route + ":初始化 initFunctionPage page.initFunctionPage:" + page.initFunctionPage + " ");
   if (page.initFunctionPage) {
+    pageShow(page);
     return;
   }
   page.initFunctionPage = true;
@@ -26,6 +41,7 @@ function init(app) {
   page.onShow = function (res) {
     wx.curPage = page;
     onshow();
+    pageShow(page);
   }
 
   //绑定页面逻辑js
@@ -39,8 +55,8 @@ function init(app) {
     }
   }
 
-  if (functions.defaultFunctions && functions.defaultFunctions.length > 0) {
-    functions.defaultFunctions.map(n => {
+  if (functions.defaultRegisterFunctions && functions.defaultRegisterFunctions.length > 0) {
+    functions.defaultRegisterFunctions.map(n => {
       page[n.name] = n;
     });
   }
@@ -56,6 +72,8 @@ function init(app) {
       });
     });
   }
+
+  pageShow(page);
 }
 
 module.exports = {

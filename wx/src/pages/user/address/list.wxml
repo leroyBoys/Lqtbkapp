@@ -36,6 +36,8 @@
 
 
 <view class='button_container weui-flex'>
-  <view class='button' bindtap='clickRedirectTo' data-url='/pages/user/address/editor'>新增地址</view>
-<view class='button' ><icon class='iconfont .icon-weixin icon'/>微信添加</view>
+
+  <view class='button' bindtap='clickLink' data-url='/pages/user/address/editor'><icon class='iconfont icon-add icon'/>新增地址</view>
+<view class='button' >
+<icon class='iconfont icon-weixin icon'/>微信添加</view>
 </view>

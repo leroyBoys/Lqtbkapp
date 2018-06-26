@@ -1,22 +1,22 @@
 <!--添加收货地址-->
 <view class="wraper">
-    <view class="listItems">
+    <view class="listItems clearfix">
         <text class="listLeft">收货人姓名: </text>
         <input id="name" class="listRight" type="number" value=" " name=""/>
     </view>
-     <view class="listItems">
+     <view class="listItems clearfix">
         <text class="listLeft">手机号码: </text>
         <input id="name" class="listRight" type="number" value=" " name=""/>
     </view>
-     <view class="listItems">
+     <view class="listItems clearfix">
         <text class="listLeft">邮政编码: </text>
         <input id="name" class="listRight" type="number" value=" " name=""/>
     </view>
-     <view class="listItems">
+     <view class="listItems clearfix">
         <text class="listLeft">所在地区: </text>
         <input id="name" bindfocus="bingAddressTap" class="listRight"  value="{{REGION_PROVINCE}}{{REGION_CITY}}{{REGION_COUNTRY}}" placeholder="小区/大厦/学校" name=""/>
     </view>
-     <view class="listItems">
+     <view class="listItems clearfix">
         <text class="listLeft">详细地址: </text>
         <input id="name" class="listRight" placeholder="详细地址（如门牌号等）"  value="{{ADDRESS}}" name=""/>
     </view>

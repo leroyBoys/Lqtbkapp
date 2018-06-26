@@ -61,7 +61,6 @@
     </view>
   </view>
 
-  <view class='shop_space'></view>
   <view class='juan_container clearfix'>
     <view class='juan_text float_left'>
       领券
@@ -75,12 +74,15 @@
 
   <view class='shop_space'></view>
 
-  <view class='pingjia clearfix'>
+  <view class='title_heade clearfix'>
     <view class='float_left'>
       口碑精选
     </view>
     <view class='float_right'>
-      查看全部
+    <navigator hover-class="none" url='/pages/shop/detail/pingjia'>
+          查看全部
+    </navigator>
+
     </view>
   </view>
 
@@ -108,13 +110,17 @@
 
       </block>
 
-        <view bindtap='clickLink' class="recommend_hot_more" data-url='{{mainurl}}'>查看更多</view>
+        <view  class="recommend_hot_more">
+         <navigator hover-class="none" url='/pages/shop/detail/pingjia'>
+       查看更多
+    </navigator>
+        </view>
   </scroll-view>
 
   <view class='shop_space'></view>
 
 
- <view class='pingjia clearfix'>
+ <view class='title_heade clearfix'>
     <view class='float_left'>
       商品详情
     </view>
@@ -133,7 +139,7 @@
   
   <view class='shop_space'></view>
 
- <view class='pingjia clearfix'>
+ <view class='title_heade clearfix'>
     <view class='float_left'>
     为你推荐
     </view>

@@ -2,46 +2,102 @@
 @import "common/plugins/font.wxss";
 @import "common/plugins/grid.wxss";
 @import "common/templates/tip/tip.wxss";
-page{
+
+page {
   background: #f4f4f4;
   color: #333;
   font-size: 14px;
   height: 100%;
-  font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+  font-family: "Helvetica Neue",
+                 "Hiragino Sans GB",
+                 "Microsoft YaHei",
+                 "\9ED1\4F53",
+                 Arial,
+                 sans-serif;
 }
 
 .container {
   min-height: 100%;
-  width:100%;
-}
-
-.template{
   width: 100%;
 }
 
-.float_left{
+.template {
+  width: 100%;
+}
+
+.float_left {
   float: left;
 }
 
-.float_right{
+.float_right {
   float: right;
 }
-.clearfix:after{
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    /* visibility: hidden; */
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  /* visibility: hidden; */
 }
-.line-fone{
-  text-decoration:line-through
+
+.line-fone {
+  text-decoration: line-through;
 }
-.max-two-line{
-    word-break: break-all;
+
+.max-two-line {
+  word-break: break-all;
   white-space: normal;
   text-overflow: ellipsis;
   display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
   -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
   -webkit-line-clamp: 2; /** 显示的行数 **/
   overflow: hidden; /** 隐藏超出的内容 **/
+}
+.single_line {
+    word-break: break-all;
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 1; /** 显示的行数 **/
+  overflow: hidden; /** 隐藏超出的内容 **/
+}
+/** 横向scroll **/
+
+.scroll_x {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.scroll_x_item {
+  display: inline-block;
+  box-sizing: border-box;
+}
+button,button[plain]{
+  border: none
+}
+
+.ad_title{
+  font-size: 14px;
+    color: #000;
+  font-weight:bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.more_font{
+   font-size: 12px;
+   color: #686868
+}
+.load-more-tips {
+  font-size: 30rpx;
+  color: #999999;
+  margin-left: 10rpx
 }

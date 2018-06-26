@@ -38,11 +38,34 @@ Page({
         page.setData(res);
     });
   },
+  noticeChange(e){
+
+    this.data.noticeUrl = e.detail.currentItemId
+  },
+  clickNotice(){
+    wx.navigateTo({
+      url: this.data.noticeUrl,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady () {
     console.log(" ---------- onReady ----------")
+  },
+  hour_timer_register(){
+ 
+    let that = this;
+    wx.myapp.hour_timer_register(this,"miaosha",false,function(time,index,timeDesc){
+
+      that.setData({
+          miaosha:{
+            desc: timeDesc,
+            time:time.split(":")
+          }
+
+      });
+    });
   },
   /**
    * 生命周期函数--监听页面显示

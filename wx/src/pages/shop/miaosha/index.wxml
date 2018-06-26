@@ -3,13 +3,15 @@
 
 <view class='miaosha_container'>
 
-<view class='desc clearfix'>
-    <view class='float_left'>
-      限量先到先得
+<view class='desc '>
+  <view class='desc_container clearfix'>
+     <view class='float_left'>
+      抢购中 先抢先得
     </view>
       <view class='float_right'>
       距离本场结束 {{countDownTime}}
     </view>
+  </view>
 </view>
 
 <scroll-view scroll-x="true" scroll-with-animation="true" scroll-into-view="time{{timeindex}}" class='miaosha'>
@@ -20,7 +22,7 @@
       {{item}}
         </view>
         <view class='bottom'> 
-            <block wx:if="{{index<timeindex}}">已结束</block >
+            <block wx:if="{{index<timeindex}}">还有机会</block >
             <block wx:elif="{{index==timeindex}}">进行中</block >
              <block wx:else> 即将开始</block >
         </view>

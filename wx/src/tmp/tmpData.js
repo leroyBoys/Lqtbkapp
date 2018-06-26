@@ -36,10 +36,13 @@ let cates = [
 
 let ads = [{ src: "https://img.alicdn.com/tfs/TB1eWl9sH9YBuNjy0FgXXcxcXXa-190-140.gif", url: "" }, { src: "http://140.143.192.36:67/102.jpg", url: "" }] ;
 
-let showDatas = [{
+let showDatas = [{ tempId:"tk_main_2_list"},{
   tempId: "tk_main_title", title: "1月抢购"
-},{
-  tempId: "tk_channel", datas: [{ title: "春天到了" }, { title: "夏天到了" }, { title: "岁月如流水，真长啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊" }]},
+},
+  {
+    tempId: "tk_ad_2", datas: [{ src: "http://140.143.192.36:67/101.jpg", url: "" }, { src: "http://140.143.192.36:67/102.jpg", url: "" }]},
+{
+  tempId: "tk_channel", datas: [{ url: "/pages/shop/search/index", title: "春天到了" }, { url: "/pages/shop/detail/index", title: "夏天到了" }, { url: "/pages/search/index",title: "岁月如流水，真长啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊" }]},
   {
     tempId: "tk_ad", datas: [{ src: "http://140.143.192.36:67/101.jpg", url:"" }, { src: "http://140.143.192.36:67/102.jpg", url:"" }]},
   {
@@ -50,8 +53,8 @@ let showDatas = [{
       { src: "http://140.143.192.36:67/101.jpg", url: "" }
     ]
   },
-  {
-    tempId: "tk_main_title", title: "超级热门"},
+
+  { tempId: "tk_title_image", src: "http://img3.imgtn.bdimg.com/it/u=1346025948,1101507879&fm=214&gp=0.jpg" } ,
   {
     tempId: "tk_main_1_list",  mainurl: "baidu.com", head: { src: "http://140.143.192.36:67/102.jpg", url: "" }, items: [
       { src: "http://140.143.192.36:67/101.jpg", url: "" },
@@ -74,7 +77,7 @@ data["index"] = {
   showDatas: showDatas
 
 };
-data["hot"] ="整点秒杀,我装作无动于衷,多想问你,究竟爱谁,怎么怪她犯了错";
+data["hot"] ="整点秒杀,我装作无动于衷,多想问你";
 
 data[key("cate1")] = {
   navLeftItems: [{ id: 0, desc: "牧师" }, { id: 1, desc: "法师" }, { id: 2, desc: "战士" }],

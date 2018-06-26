@@ -22,12 +22,14 @@ module.exports = {
     })
   },
   bindscroll:function(e){
-    console.log(e);
-    if (e.detail.scrollTop>50){
+    let lasttop = this._scrollTop ? this._scrollTop:0;
+    this._scrollTop = e.detail.scrollTop;
+    if (this._scrollTop > 10 || this._scrollTop > lasttop){
       this.hideForm();
     }else{
       this.showForm();
     }
+
     if (this.data.shownavindex != 4){
       return
     }

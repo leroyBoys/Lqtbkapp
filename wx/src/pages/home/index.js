@@ -33,6 +33,11 @@ Page({
         clickFunction: "clickLink",
         url: "/pages/user/setting",
       text: "系统设置"
+    }, {
+        icon: "icon-mimaicon",
+      clickFunction: "clickLink",
+      url: "/pages/user/setting",
+      text: "隐私协议"
     }]
   },
   /**

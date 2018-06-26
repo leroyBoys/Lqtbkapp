@@ -1,4 +1,5 @@
 @import "../../common/templates/ad/ad.wxss";
+@import "../../common/templates/shop/shop1.wxss";
 @import "../../common/templates/header/header.wxss";
 /** 分类推荐 **/
 

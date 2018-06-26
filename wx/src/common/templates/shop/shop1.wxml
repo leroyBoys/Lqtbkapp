@@ -1,0 +1,16 @@
+ <template name="line_three_shop_1">
+
+<view class='line_three_shop_item'>
+
+  <image mode='widthFix' src="http://res.126.net/p/dbqb/one/168/1168/6abc05894e903b9749166c224d739838.png"></image>
+  <view class='foot'>
+    <view class='shop_title single_line'>
+      火星摩托值得拥有
+    </view>
+    <view class='price'>
+      ￥99060
+    </view>
+  </view>
+
+</view>
+</template>

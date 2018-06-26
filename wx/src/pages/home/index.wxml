@@ -1,21 +1,23 @@
 <view class="container">
   <view  class="userinfo">
-      <view class='pic weui-flex'>
+      <view class='pic weui-flex' bindtap="bindViewTap">
           <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
-          <view>
-              <view class='userinfo-nickname '>
+          <view class='pic_div'>
+              <view class='userinfo-nickname'>
               {{userInfo.nickName}}
             
             </view>
             <view class='bottom'>
-               <icon class='iconfont icon-jinpai icon'/>金牌会员
-            
+               <icon class='iconfont icon-jinpai'/>金牌会员
             </view>
           </view>
       </view>
       <view class='operate'>
-        <view bindtap="bindViewTap">
-             <icon class='iconfont icon-qiehuan1 icon'/>切换账号
+        <view>
+            <navigator url='/pages/login/otherlogin' hover-class='none'>
+                <icon class='iconfont icon-qiehuan1 icon'/>切换账号
+            </navigator>
+         
         </view>
       </view>
 
@@ -29,14 +31,14 @@
     <block wx:for="{{userListInfo}}" wx:key="{{item.idex}}">
 
       <view wx:if="{{!item.isHide}}" class="weui_cell" data-url='{{item.url}}' bindtap='{{item.clickFunction}}'>
-        <view class="weui_cell_hd">
-        <icon class='iconfont {{item.icon}} icon'/>
+       <view class="weui_cell_bd">
+         <icon class='iconfont {{item.icon}} icon'/>
         </view>
         <view class="weui_cell_bd">
           <view class="weui_cell_bd_p"> {{item.text}} </view>
         </view>
         <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
-        <view class="with_arrow"></view>
+
       </view>
     </block>
   </view>

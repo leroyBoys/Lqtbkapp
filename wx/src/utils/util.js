@@ -187,6 +187,7 @@ function clickRedirectTo(e){
 
 /** 不保留当前页面 */
 function _clickRedirectTo(url) {
+  console.log("==>redirectTo");
   wx.redirectTo({
     url: url,
     fail: function () {
@@ -202,6 +203,7 @@ function _clickRedirectTo(url) {
 
 /** 保留当前页面 */
 function _clickNavigateTo(url) {
+  console.log("==>navigateTo");
   wx.navigateTo({
     url: url,
     fail: function () {
@@ -275,16 +277,14 @@ function alert(msg) {
   console.log(msg);
   page.setData({
     tipitem: {
+      text: null
+    }
+  });
+  page.setData({
+    tipitem: {
       text: msg
     }
   });
-  setTimeout(function () {
-    page.setData({
-      tipitem: {
-        text: null
-      }
-    });
-  }, 3000)
 }
 
 function bindchange(e){

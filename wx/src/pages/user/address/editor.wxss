@@ -1,10 +1,9 @@
-page{
-    background: #fff;
-}
 .wraper .listItems{
-    padding: 0 30rpx;
-    height: 120rpx;
-    line-height: 120rpx;
+    padding: 0 20px;
+    height: 80rpx;
+    margin-top: 10px;
+    box-sizing: border-box;
+text-align: center;
     border-bottom: 1rpx solid #f3f3f3;
 }
 .wraper .listItems .listLeft{
@@ -13,7 +12,6 @@ page{
 .wraper .listItems .listRight{
     float: left;
     margin-left: 20rpx;
-    margin-top: 40rpx;
     width: 420rpx;
 }
 .btnGroup .btn{

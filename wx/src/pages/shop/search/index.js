@@ -60,7 +60,7 @@ Page({
   
   },
   todetail :function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/shop/detail/index',
     })
 

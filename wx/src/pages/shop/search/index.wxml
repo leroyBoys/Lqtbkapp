@@ -1,81 +1,82 @@
+
 <include src="../../../common/templates/templates.wxml" />
 <include src="../../../common/templates/header/header.wxml" />
 
-<view class="form">
-  <form bindsubmit="formSubmit" bindreset="formReset" wx:if="{{!hideForm}}">
+<block wx:if="{{!hideForm}}">
+
+  <view class="form">
+    <form bindsubmit="formSubmit" bindreset="formReset">
 
 
-    <view class="nav">
-      <view class="nav-son {{shownavindex == 1? 'active' : ''}}" bindtap="sortNow" data-nav="1">
-        <view class="content border-right">默认</view>
-      </view>
-      <view class="nav-son borders {{shownavindex == 2? 'active' : ''}}" id="ddd" bindtap="sortNow" data-nav="2">
-        <view class="content border-right">销量</view>
-      </view>
-      <view class="nav-son borders {{shownavindex == 3? 'active' : ''}}" bindtap="sortNow" data-nav="3">
-        <view class="content border-right">价格</view>
-      </view>
-      <view class="nav-son {{shownavindex == 4? 'active' : ''}}" bindtap="sortNow" data-nav="4">
-        <view class="content">
-          <view>筛选</view>
-          <view class="icon"></view>
+      <view class="nav">
+        <view class="nav-son {{shownavindex == 1? 'active' : ''}}" bindtap="sortNow" data-nav="1">
+          <view class="content border-right">默认</view>
         </view>
-
-      </view>
-    </view>
-
-    <block wx:if="{{shownavindex==4}}">
-    
-      <view class='selectcontent'>
-        <view class="label title">优惠折扣</view>
-        <view class="youhuizhekou">
-
-          <checkbox-group name="zhekou" bindchange="bindchange" class="weui-cells weui-flex" data-attr="youhui">
-            <label class="weui-cell" wx:for="{{ youhui }}" wx:key="this*">
-              <checkbox class="weui-check" value="{{ item.value }}" checked="{{ item.checked }}" />
-              <view class="weui-cell__hd weui-check__hd_in-checkbox">
-                <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{ !item.checked }}"></icon>
-                <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{ item.checked }}"></icon>
-              </view>
-              <view class="weui-cell__bd">{{ item.name }}</view>
-            </label>
-          </checkbox-group>
-
+        <view class="nav-son borders {{shownavindex == 2? 'active' : ''}}" id="ddd" bindtap="sortNow" data-nav="2">
+          <view class="content border-right">销量</view>
         </view>
-      </view>
-
-      <view class="selectcontent">
-        <view class="label title">价格范围</view>
-        <view class="label">
-          <view class='weui-flex center'>
-            <input class='weui-flex__item weui-input' type='digit' name='pricemin' value='{{pricemin>0?pricemin:""}}' bindblur="priceChange" placeholder="最低价格" />
-            <view class='placeholder' class="middle">-</view>
-            <input class='weui-flex__item weui-input'  type='digit'  name='pricemax' value='{{pricemax>0?pricemax:""}}' bindblur="priceChange" placeholder="最高价格" />
-
+        <view class="nav-son borders {{shownavindex == 3? 'active' : ''}}" bindtap="sortNow" data-nav="3">
+          <view class="content border-right">价格</view>
+        </view>
+        <view class="nav-son {{shownavindex == 4? 'active' : ''}}" bindtap="sortNow" data-nav="4">
+          <view class="content">
+            <view>筛选</view>
+            <view class="icon"></view>
           </view>
 
         </view>
-
-        <view class='weui-flex sure-button'>
-          <button type="default" class='weui-flex__item' formType="reset" bindreset="formReset">重置</button>
-          <button type="default" class='weui-flex__item' formType="submit" bindsubmit="formSubmit">确定</button>
-        </view>
       </view>
-    </block>
-  </form>
-</view>
 
-<scroll-view class="scroll-container" bindscroll="bindscroll" bindscrolltolower="bindscrolltolower" bindscrolltoupper="showForm" scroll-y="true">
-<view class="container">
+      <block wx:if="{{shownavindex==4}}">
+        <view class='selectcontent'>
 
- <template is="tk-tuangou-list-1" data="{{goods:[1,2,3,6,4,6,4,51,2,3,6,4,51,2,3,6,4,5]}}" />
+          <view class='div'>
+            <view class="label title">优惠折扣</view>
+            <view class="youhuizhekou">
+
+              <checkbox-group name="zhekou" bindchange="bindchange" class="weui-cells weui-flex" data-attr="youhui">
+                <label class="weui-cell" wx:for="{{ youhui }}" wx:key="this*">
+                  <checkbox class="weui-check" value="{{ item.value }}" checked="{{ item.checked }}" />
+                  <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                    <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{ !item.checked }}"></icon>
+                    <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{ item.checked }}"></icon>
+                  </view>
+                  <view class="weui-cell__bd">{{ item.name }}</view>
+                </label>
+              </checkbox-group>
+
+            </view>
+          </view>
+
+          <view class="div">
+            <view class="label title">价格范围</view>
+            <view class="label">
+              <view class='weui-flex center'>
+                <input class='weui-flex__item weui-input' type='digit' name='pricemin' value='{{pricemin>0?pricemin:""}}' bindblur="priceChange" placeholder="最低价格" />
+                <view class='placeholder' class="middle">-</view>
+                <input class='weui-flex__item weui-input' type='digit' name='pricemax' value='{{pricemax>0?pricemax:""}}' bindblur="priceChange" placeholder="最高价格" />
+
+              </view>
+
+            </view>
+
+            <view class='weui-flex sure-button'>
+              <button  plain='true' class='weui-flex__item' formType="reset" bindreset="formReset">重置</button>
+              <button   plain='true'  class='weui-flex__item' formType="submit" bindsubmit="formSubmit">确定</button>
+            </view>
+          </view>
+
+        </view>
+      </block>
+    </form>
+  </view>
+</block>
 
 
-
+<scroll-view class="scroll-container {{hideForm?'absoluteclass':''}}"  bindscroll="bindscroll" bindscrolltolower="bindscrolltolower" bindscrolltoupper="showForm" scroll-y="true">
   <template is="tk-shop-list-2" data="{{goods:[1,2,3,6,4,5,6,4,51,2,3,6,4,5]}}" />
   <template is="tk-shop-list-1" data="{{goods:[1,2,3,6,4,5,6,4,51,2,3,6,4,5]}}" />
-
-</view>
+ <template is="tk-tuangou-list-1" data="{{goods:[1,2,3,6,4,6,4,51,2,3,6,4,51,2,3,6,4,5]}}" />
 
 
 </scroll-view>

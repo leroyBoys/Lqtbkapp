@@ -1,26 +1,53 @@
-page{
-    background: #fff;
+.notice_module {
+  /* 用样式控制隐藏  visibility: hidden;*//* flex 布局 */
+  display: flex;
+  margin-left: 20px;
+  z-index: 99999;
+  /* 生成绝对定位的元素，相对于浏览器窗口进行定位 */
+  position: fixed;
+  /* 如果 height,width 不变的情况下，left,top 不用修改 */
+  width: 100%;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0);
 }
-.wraper .listItems{
-    padding: 0 30rpx;
-    height: 120rpx;
-    line-height: 120rpx;
-    border-bottom: 1rpx solid #f3f3f3;
+
+.shownotice_module {
+  padding: 0 15px;
+  line-height: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 圆角 */
+  border-radius: 12px;
 }
-.wraper .listItems .listLeft{
-    float: left;
+
+.notice_module .text {
+  /* 字体加粗 */
+  color: white;
+  font-size: 12px;
+  font-family: "微软雅黑";
 }
-.wraper .listItems .listRight{
-    float: left;
-    margin-left: 20rpx;
-    margin-top: 40rpx;
-    width: 420rpx;
+
+@keyframes flytop {
+  0% {
+    opacity: 0;
+    top: 50%;
+  }
+
+  30% {
+    opacity: 1;
+    top: 10%;
+  }
+
+  60% {
+    opacity: 0.9;
+    top: 10%;
+  }
+
+  100% {
+    opacity: 0;
+    top: 10%;
+  }
 }
-.btnGroup .btn{
-    width: 80%;
-    height: 90rpx;
-    border-radius: 45rpx;
-    background: #f12035;
-    color: #fff;
-    margin-top: 30rpx;
+
+.flytop {
+  animation: flytop 5s both;
 }

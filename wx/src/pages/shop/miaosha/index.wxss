@@ -1,7 +1,10 @@
 @import "../../../common/templates/shop/tuangou1.wxss";
+page {
+  background: #CCC;
+}
 .miaosha {
   width: 100%;
-  height: 78px;
+  height: 70px;
   background-color: #2d3845;
   font-size: 16px;
   color: #fff;
@@ -13,11 +16,20 @@
 .miaosha_container .desc {
   z-index: 1;
   top: 46px;
-  background: #fff;
+  background: #ccc;
   width: 100%;
-  padding: 5px;
   position: absolute;
-  box-sizing: border-box;
+ padding:1px 5px;
+   box-sizing: border-box;
+}
+
+.miaosha_container .desc_container {
+    box-sizing: border-box;
+  background: #FFF;
+  width: 100%;
+ padding: 5px;
+  border-radius: 6px;
+
 }
 
 .desc .float_left{
@@ -57,4 +69,5 @@
 
 .miaosha_container .container {
   background-color: #ccc;
+  margin-top:7px;
 }
